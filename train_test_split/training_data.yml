@@ -1,0 +1,459 @@
+version: "2.0"
+nlu:
+- intent: bot_challenge
+  examples: |
+    - are you a human?
+    - am I talking to a human?
+    - are you a bot?
+- intent: affirm
+  examples: |
+    - y
+    - of course
+    - that sounds good
+    - yes
+    - correct
+- intent: deny
+  examples: |
+    - don't like that
+    - no
+    - n
+    - never
+    - no way
+- intent: ask_new_notebook
+  examples: |
+    - Explain [new notebook](new notebook) to me.
+    - I'd like to know the meaning of [new notebook](new notebook).
+    - How does [new notebook](new notebook) work?
+    - [new notebook](new notebook)
+    - I need a brief introduction of [new notebook](new notebook).
+    - I'd like to know the function of [new notebook](new notebook).
+- intent: ask_open
+  examples: |
+    - [open](open)
+    - I'd like to know the meaning of [open](open).
+    - I need help on how to use [open](open).
+    - Tell me something about [open](open).
+    - I'd like to know the function of [open](open).
+- intent: ask_make_a_copy
+  examples: |
+    - Can you show me the functions of [make a copy](make a copy)?
+    - I need help on how to use [make a copy](make a copy).
+    - I'd like to know the function of [make a copy](make a copy).
+    - How does [make a copy](make a copy) work?
+    - Tell me something about [make a copy](make a copy).
+    - I need a brief introduction of [make a copy](make a copy).
+- intent: ask_cut_cells
+  examples: |
+    - I'd like to know the meaning of [cut cells](cut cells).
+    - I need help on how to use [cut cells](cut cells).
+    - I need a brief introduction of [cut cells](cut cells).
+    - What can I do with [cut cells](cut cells)?
+    - I'd like to know the function of [cut cells](cut cells).
+    - Can you show me the functions of [cut cells](cut cells)?
+- intent: ask_copy_cells
+  examples: |
+    - I'd like to know the function of [copy cells](copy cells).
+    - Tell me something about [copy cells](copy cells).
+    - What can I do with [copy cells](copy cells)?
+    - I need a brief introduction of [copy cells](copy cells).
+    - I need help on how to use [copy cells](copy cells).
+- intent: ask_paste_cells_above
+  examples: |
+    - What can I do with [paste cells above](paste_cells_above)?
+    - I'd like to know the function of [paste cells above](paste_cells_above).
+    - I'd like to know the meaning of [paste cells above](paste_cells_above).
+    - How does [paste cells above](paste_cells_above) work?
+    - I need a brief introduction of [paste cells above](paste_cells_above).
+    - Can you show me the functions of [paste cells above](paste_cells_above)?
+- intent: ask_paste_cells_below
+  examples: |
+    - I'd like to know the function of [paste cells below](paste_cells_below).
+    - I need help on how to use [paste cells below](paste_cells_below).
+    - How does [paste cells below](paste_cells_below) work?
+    - What can I do with [paste cells below](paste_cells_below)?
+    - Explain [paste cells below](paste_cells_below) to me.
+- intent: ask_paste_cells_and_replace
+  examples: |
+    - [paste cells and replace](paste_cells_and_replace)
+    - Tell me something about [paste cells and replace](paste_cells_and_replace).
+    - Can you show me the functions of [paste cells and replace](paste_cells_and_replace)?
+    - What can I do with [paste cells and replace](paste_cells_and_replace)?
+    - I need help on how to use [paste cells and replace](paste_cells_and_replace).
+    - I'd like to know the function of [paste cells and replace](paste_cells_and_replace).
+- intent: ask_delete_cells
+  examples: |
+    - How does [delete cells](delete_cells) work?
+    - Can you show me the functions of [delete cells](delete_cells)?
+    - What can I do with [delete cells](delete_cells)?
+    - I need a brief introduction of [delete cells](delete_cells).
+    - I need help on how to use [delete cells](delete_cells).
+    - I'd like to know the meaning of [delete cells](delete_cells).
+- intent: ask_undo_delete_cells
+  examples: |
+    - I need a brief introduction of [undo delete cells](undo_delete_cells).
+    - Tell me something about [undo delete cells](undo_delete_cells).
+    - Explain [undo delete cells](undo_delete_cells) to me.
+    - I'd like to know the function of [undo delete cells](undo_delete_cells).
+    - I need help on how to use [undo delete cells](undo_delete_cells).
+- intent: ask_split_cells
+  examples: |
+    - How does [split cells](split_cells) work?
+    - [split cells](split_cells)
+    - Explain [split cells](split_cells) to me.
+    - I'd like to know the meaning of [split cells](split_cells).
+    - I'd like to know the function of [split cells](split_cells).
+    - Tell me something about [split cells](split_cells).
+- intent: ask_merge_cell_above
+  examples: |
+    - I'd like to know the meaning of [merge cell above](merge_cell_above).
+    - Can you show me the functions of [merge cell above](merge_cell_above)?
+    - Tell me something about [merge cell above](merge_cell_above).
+    - I need a brief introduction of [merge cell above](merge_cell_above).
+    - How does [merge cell above](merge_cell_above) work?
+- intent: ask_move_cell_up
+  examples: |
+    - I need help on how to use [move cell up](move_cell_up).
+    - I need a brief introduction of [move cell up](move_cell_up).
+    - What can I do with [move cell up](move_cell_up)?
+    - How does [move cell up](move_cell_up) work?
+    - I'd like to know the function of [move cell up](move_cell_up).
+    - Tell me something about [move cell up](move_cell_up).
+    - Explain [move cell up](move_cell_up) to me.
+- intent: ask_move_cell_down
+  examples: |
+    - Explain [move cell down](move_cell_down) to me.
+    - [move cell down](move_cell_down)
+    - how to [move cell down](move_cell_down)
+    - I'd like to know the function of [move cell down](move_cell_down).
+    - What can I do with [move cell down](move_cell_down)?
+    - How does [move cell down](move_cell_down) work?
+- intent: ask_edit_notebook_metadata
+  examples: |
+    - I need help on how to use [edit notebook metadata](edit_notebook_metadata).
+    - I'd like to know the meaning of [edit notebook metadata](edit_notebook_metadata).
+    - Tell me something about [edit notebook metadata](edit_notebook_metadata).
+    - Explain [edit notebook metadata](edit_notebook_metadata) to me.
+    - How does [edit notebook metadata](edit_notebook_metadata) work?
+    - [edit notebook metadata](edit_notebook_metadata)
+    - I need a brief introduction of [edit notebook metadata](edit_notebook_metadata).
+- intent: ask_find_and_replace
+  examples: |
+    - I'd like to know the function of [find and replace](find_and_replace).
+    - tell me about [find and replace](find_and_replace)
+    - I need help on how to use [find and replace](find_and_replace).
+    - How does [find and replace](find_and_replace) work?
+    - I'd like to know the meaning of [find and replace](find_and_replace).
+    - Tell me something about [find and replace](find_and_replace).
+- intent: ask_cut_cell_attachment
+  examples: |
+    - [cut cell attachment](cut_cell_attachment)
+    - Tell me something about [cut cell attachment](cut_cell_attachment).
+    - Can you show me the functions of [cut cell attachment](cut_cell_attachment)?
+    - I need help on how to use [cut cell attachment](cut_cell_attachment).
+    - what can I do with [cut cell attachment](cut_cell_attachment)
+    - I'd like to know the meaning of [cut cell attachment](cut_cell_attachment).
+- intent: ask_copy_cell_attachment
+  examples: |
+    - How does [copy cell attachment](copy_cell_attachment) work?
+    - what can I do with [copy cell attachment](copy_cell_attachment)
+    - Explain [copy cell attachment](copy_cell_attachment) to me.
+    - [copy cell attachment](copy_cell_attachment)
+    - I need help on how to use [copy cell attachment](copy_cell_attachment).
+    - I'd like to know the meaning of [copy cell attachment](copy_cell_attachment).
+    - Tell me something about [copy cell attachment](copy_cell_attachment).
+- intent: ask_paste_cell_attachment
+  examples: |
+    - I'd like to know the function of [paste cell attachment](paste_cell_attachment).
+    - I need a brief introduction of [paste cell attachment](paste_cell_attachment).
+    - Can you show me the functions of [paste cell attachment](paste_cell_attachment)?
+    - Tell me something about [paste cell attachment](paste_cell_attachment).
+    - I'd like to know the meaning of [paste cell attachment](paste_cell_attachment).
+    - How does [paste cell attachment](paste_cell_attachment) work?
+- intent: ask_insert_image
+  examples: |
+    - [insert image](insert_image)
+    - I'd like to know the meaning of [insert image](insert_image).
+    - What can I do with [insert image](insert_image)?
+    - Tell me something about [insert image](insert_image).
+    - I need help on how to use [insert image](insert_image).
+    - I need a brief introduction of [insert image](insert_image).
+    - I'd like to know the function of [insert image](insert_image).
+- intent: ask_NLTK
+  examples: |
+    - Can you tell me more about [NLTK](NLTK)?
+    - Do you know [NLTK](NLTK)?
+    - I would appreciate to learn [NLTK](NLTK).
+    - [NLTK](NLTK)
+    - what can I learn from you about [NLTK](NLTK)?
+    - I want to know more about [NLTK](NLTK).
+    - I'd prefer to gain knowledge of [NLTK](NLTK).
+- intent: ask_Numpy
+  examples: |
+    - I'd prefer to gain knowledge of [Numpy](Numpy).
+    - [Numpy](Numpy)
+    - I'd like to learn something about [Numpy](Numpy).
+    - I would appreciate to learn [Numpy](Numpy).
+    - what can I learn from you about [Numpy](Numpy)?
+    - Can you tell me more about [Numpy](Numpy)?
+    - Do you know [Numpy](Numpy)?
+- intent: ask_save_as
+  examples: |
+    - I need a brief introduction of [save as](save as).
+    - How does [save as](save as) work?
+    - I need help on how to use [save as](save as).
+    - Tell me something about [save as](save as).
+    - [save as](save as)
+    - Can you show me the functions of [save as](save as)?
+    - I'd like to know the function of [save as](save as).
+- intent: ask_NLTK_handling_text
+  examples: |
+    - [handling text](NLTK_handling_text)
+    - What should I type in if I am going to [handle text](NLTK_handling_text) words?
+    - Command line for [handling text](NLTK_handling_text).
+    - I want to see the code for [handling text](NLTK_handling_text).
+    - What is the command list for [handling text](NLTK_handling_text)?
+    - what commands can I run when I [handle text](NLTK_handling_text)?
+    - Show me the command list on [handling text](NLTK_handling_text).
+- intent: ask_NLTK_accessing_corpora_and_lexical_resources
+  examples: |
+    - [accessing corpora and lexical resources](NLTK_accessing_corpora_and_lexical_resources)
+    - What is the command list for [accessing corpora and lexical resources](NLTK_accessing_corpora_and_lexical_resources)?
+    - How many default useful command for ['accessing corpora and lexical resources'](NLTK_accessing_corpora_and_lexical_resources) in NLTK?
+    - Tell me more about [accessing corpora and lexical resources](NLTK_accessing_corpora_and_lexical_resources).
+    - Show me the command list on [accessing corpora and lexical resources](NLTK_accessing_corpora_and_lexical_resources).
+    - What should I type in if I am going to [accessing corpora and lexical resources](NLTK_accessing_corpora_and_lexical_resources) words?
+    - what do I do when [accessing corpora and lexical resources](NLTK_accessing_corpora_and_lexical_resources).
+    - Command line for [accessing corpora and lexical resources](NLTK_accessing_corpora_and_lexical_resources).
+- intent: ask_NLTK_tokenization
+  examples: |
+    - what commands can I run when I do [tokenization](NLTK_tokenization)?
+    - [tokenization](NLTK_tokenization)
+    - Tell me more about [tokenization](NLTK_tokenization).
+    - What should I type in if I am going to [tokenization](NLTK_tokenization) words?
+    - I want to see the code for [tokenization](NLTK_tokenization).
+    - What is the command list for [tokenization](NLTK_tokenization)?
+    - what do I do when [tokenizing words](NLTK_tokenization).
+- intent: ask_NLTK_lemmatization_and_stemming
+  examples: |
+    - Command line for [lemmatization and stemming](NLTK_lemmatization_and_stemming).
+    - what do I do when [lemmatize and stem words](NLTK_lemmatization_and_stemming).
+    - How many default useful command for [lemmatization and stemming](NLTK_lemmatization_and_stemming) in NLTK?
+    - What is the command list for [lemmatization and stemming](NLTK_lemmatization_and_stemming)?
+    - Tell me more about [lemmatization and stemming](NLTK_lemmatization_and_stemming).
+    - What should I type in if I am going to [lemmatization and stemming](NLTK_lemmatization_and_stemming) words?
+    - [lemmatization and stemming](NLTK_lemmatization_and_stemming)
+- intent: ask_NLTK_part_of_speech_tagging
+  examples: |
+    - what do I do when do [part of speech tagging](NLTK_part_of_speech_tagging).
+    - what commands can I run when I do [part of speech tagging](NLTK_part_of_speech_tagging)?
+    - [part of speech tagging](NLTK_part_of_speech_tagging)
+    - Command line for [part of speech tagging](NLTK_part_of_speech_tagging).
+    - Show me the command list on [part of speech tagging](NLTK_part_of_speech_tagging).
+    - How many default useful command for [part of speech tagging](NLTK_part_of_speech_tagging) in NLTK?
+    - What is the command list for [part of speech tagging](NLTK_part_of_speech_tagging)?
+- intent: ask_NLTK_sentence_parsing
+  examples: |
+    - [sentence parsing](NLTK_sentence_parsing)
+    - Command line for [sentence parsing](NLTK_sentence_parsing).
+    - What is the command list for [sentence parsing](NLTK_sentence_parsing)?
+    - Tell me more about [sentence parsing](NLTK_sentence_parsing).
+    - what commands can I run when I do [sentence parsing](NLTK_sentence_parsing)?
+    - I want to see the code for [sentence parsing](NLTK_sentence_parsing).
+    - what do I do when do [sentence parsing](NLTK_sentence_parsing).
+- intent: ask_NLTK_text_classification
+  examples: |
+    - Tell me more about [text classification](NLTK_text_classification).
+    - [text classification](NLTK_text_classification)
+    - Command line for [text classification](NLTK_text_classification).
+    - I want to see the code for [text classification](NLTK_text_classification).
+    - what commands can I run when I do [text classification](NLTK_text_classification)?
+    - What should I type in if I am going to [text classification](NLTK_text_classification) words?
+    - How many default useful command for [text classification](NLTK_text_classification) in NLTK?
+    - Show me the command list on [text classification](NLTK_text_classification).
+- intent: ask_NLTK_entity_recognition
+  examples: |
+    - what do I do when do [entity recognition](NLTK_entity_recognition).
+    - How many default useful command for [entity recognition](NLTK_entity_recognition) in NLTK?
+    - what commands can I run when I do [entity recognition](NLTK_entity_recognition)?
+    - [entity recognition](NLTK_entity_recognition)
+    - Tell me more about [entity recognition](NLTK_entity_recognition).
+    - I want to see the code for [entity recognition](NLTK_entity_recognition).
+    - Command line for [entity recognition](NLTK_entity_recognition).
+- intent: ask_Numpy_creating_arrays
+  examples: |
+    - Show me the command list on [creating arrays](Numpy_creating_arrays).
+    - Tell me more about [creating arrays](Numpy_creating_arrays).
+    - Command line for [creating arrays](Numpy_creating_arrays).
+    - what do I do when do [creating arrays](Numpy_creating_arrays).
+    - what commands can I run when I [create arrays](Numpy_creating_arrays)?
+    - What should I type in if I am going to [create arrays](Numpy_creating_arrays) words?
+    - How many default useful command for [creating arrays](Numpy_creating_arrays) in Numpy?
+- intent: ask_Numpy_inspecting_your_array
+  examples: |
+    - [inspecting your array](Numpy_inspecting_your_array)
+    - What is the command list for [inspecting your array](Numpy_inspecting_your_array)?
+    - What should I type in if I am going to [inspect my array](Numpy_inspecting_your_array) words?
+    - what do I do when [inspecting my array](Numpy_inspecting_your_array).
+    - what commands can I run when I [inspecting your array](Numpy_inspecting_your_array)?
+    - I want to see the code for [inspecting your array](Numpy_inspecting_your_array).
+    - How many default useful command for [inspecting your array](Numpy_inspecting_your_array) in Numpy?
+- intent: ask_Numpy_arrary_mathematics
+  examples: |
+    - what commands can I run when I do [array mathematics](Numpy_array_mathematics)?
+    - what do I do when do [array mathematics](Numpy_array_mathematics).
+    - Show me the command list on [array mathematics](Numpy_array_mathematics).
+    - What should I type in if I am going to do [array mathematics](Numpy_array_mathematics) words?
+    - What is the command list for [array mathematics](Numpy_array_mathematics)?
+    - Tell me more about [array mathematics](Numpy_array_mathematics).
+    - How many default useful command for [array mathematics](Numpy_array_mathematics) in Numpy?
+- intent: ask_Numpy_arrary_manipulation
+  examples: |
+    - Tell me more about [array manipulation](Numpy_array_manipulation).
+    - what commands can I run when I do [array manipulation](Numpy_array_manipulation)?
+    - How many default useful command for [array manipulation](Numpy_array_manipulation) in Numpy?
+    - [array manipulation](Numpy_array_manipulation)
+    - What is the command list for [array manipulation](Numpy_array_manipulation)?
+    - what do I do when do [array manipulation](Numpy_array_manipulation).
+    - I want to see the code for [array manipulation](Numpy_array_manipulation).
+    - What should I type in if I am going to do [array manipulation](Numpy_array_manipulation) words?
+- intent: ask_rename
+  examples: |
+    - [rename](rename)
+    - How does [rename](rename) work?
+    - Can you show me the functions of [rename](rename)?
+    - I'd like to know the function of [rename](rename).
+    - I need help on how to use [rename](rename).
+    - What can I do with [rename](rename)?
+    - I need a brief introduction of [rename](rename).
+    - Tell me something about [rename](rename).
+- intent: ask_save_and_checkpoint
+  examples: |
+    - I'd like to know the meaning of [save and checkpoint](save and checkpoint).
+    - Explain [save and checkpoint](save and checkpoint) to me.
+    - Can you show me the functions of [save and checkpoint](save and checkpoint)?
+    - What can I do with [save and checkpoint](save and checkpoint)?
+    - I need help on how to use [save and checkpoint](save and checkpoint).
+    - [save and checkpoint](save and checkpoint)
+    - I'd like to know the function of [save and checkpoint](save and checkpoint).
+    - How does [save and checkpoint](save and checkpoint) work?
+- intent: ask_revert_to_checkpoint
+  examples: |
+    - I need a brief introduction of [revert to checkpoint](revert to checkpoint).
+    - I need help on how to use [revert to checkpoint](revert to checkpoint).
+    - [revert to checkpoint](revert to checkpoint)
+    - Can you show me the functions of [revert to checkpoint](revert to checkpoint)?
+    - How does [revert to checkpoint](revert to checkpoint) work?
+    - I'd like to know the meaning of [revert to checkpoint](revert to checkpoint).
+    - What can I do with [revert to checkpoint](revert to checkpoint)?
+    - Explain [revert to checkpoint](revert to checkpoint) to me.
+- intent: ask_print_preview
+  examples: |
+    - I need a brief introduction of [print preview](print preview).
+    - I'd like to know the meaning of [print preview](print preview).
+    - I need help on how to use [print preview](print preview).
+    - What can I do with [print preview](print preview)?
+    - Can you show me the functions of [print preview](print preview)?
+    - Tell me something about [print preview](print preview).
+    - I'd like to know the function of [print preview](print preview).
+    - Explain [print preview](print preview) to me.
+- intent: ask_download_as
+  examples: |
+    - What can I do with [download as](download as)?
+    - I need help on how to use [download as](download as).
+    - Tell me something about [download as](download as).
+    - I need a brief introduction of [download as](download as).
+    - Explain [download as](download as) to me.
+    - How does [download as](download as) work?
+    - [download as](download as)
+    - I'd like to know the meaning of [download as](download as).
+- intent: ask_close_and_halt
+  examples: |
+    - I need a brief introduction of [close and halt](close and halt).
+    - Explain [close and halt](close and halt) to me.
+    - What can I do with [close and halt](close and halt)?
+    - I need help on how to use [close and halt](close and halt).
+    - [close and halt](close and halt)
+    - I'd like to know the meaning of [close and halt](close and halt).
+    - Can you show me the functions of [close and halt](close and halt)?
+    - How does [close and halt](close and halt) work?
+- intent: goodbye
+  examples: |
+    - cu
+    - see you later
+    - good afternoon
+    - good night
+    - goodbye
+    - see you around
+    - bye bye
+    - have a nice day
+- intent: greet
+  examples: |
+    - moin
+    - hello
+    - goodevening
+    - hi
+    - good evening
+    - goodmorning
+    - hey
+    - hello there
+    - good morning
+    - let's go
+    - good afternoon
+- intent: mood_great
+  examples: |
+    - super stoked
+    - wonderful
+    - so good
+    - I am going to save the world
+    - so perfect
+    - I am great
+    - extremely good
+    - I am feeling very good
+    - I am amazing
+    - perfect
+    - feeling like a king
+- intent: mood_unhappy
+  examples: |
+    - I am sad
+    - so saad
+    - unhappy
+    - not good
+    - so sad
+    - I am disappointed
+    - my day was horrible
+    - sad
+    - I don't feel very well
+    - extremly sad
+    - not very good
+- intent: out_of_scope
+  examples: |
+    - that's not right.
+    - I want to order a pizza.
+    - don't like that.
+    - I don't want to tell you that.
+    - I changed my mind.
+    - you're no help.
+    - this isn't working.
+    - nevermind.
+    - this is no help at all.
+    - I already told you that.
+    - that's not what I want to do.
+    - how old are you?
+    - I want to do something else.
+    - tell me the weather.
+- intent: ask_Jupyter
+  examples: |
+    - What can I learn from you about [Jupyter](Jupyter)?
+    - I'd like to learn something about [Jupyter notebook](Jupyter).
+    - Do you know [Jupyter](Jupyter)?
+    - I'd prefer to gain knowledge of [Jupyter](Jupyter).
+    - I'd prefer to gain knowledge of [Jupyter notebook](Jupyter).
+    - Show me the knowledge of [Jupyter](Jupyter).
+    - [Jupyter](Jupyter)
+    - I'd like to learn something about [Jupyter](Jupyter).
+    - Can you tell me more about [Jupyter](Jupyter)?
+    - I would appreciate to learn [Jupyter notebook](Jupyter).
+    - I would appreciate to learn [Jupyter](Jupyter).
+    - [Jupyter notebook](Jupyter)
+    - Can you tell me more about [Jupyter notebook](Jupyter)?
+    - What can I learn from you about [Jupyter notebook](Jupyter)?

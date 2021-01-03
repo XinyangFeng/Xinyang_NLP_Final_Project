@@ -1,0 +1,774 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: exchange greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_bot_info
+
+- story: ask Jupyter notebook
+  steps:
+  - intent: ask_Jupyter
+  - action: utter_Jupyter_info
+  - action: utter_ask_Jupyter
+
+- story: ask NLTK
+  steps:
+  - intent: ask_NLTK
+  - action: utter_NLTK_info
+  - action: utter_ask_NLTK
+
+- story: ask Numpy
+  steps:
+  - intent: ask_Numpy
+  - action: utter_Numpy_info
+  - action: utter_ask_Numpy
+
+- story: ask new notebook happy path
+  steps:
+  - intent: ask_new_notebook
+  - action: utter_ask_new_notebook
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+
+- story: ask new notebook sad path 1
+  steps:
+  - intent: ask_new_notebook
+  - action: utter_ask_new_notebook
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+
+- story: ask new notebook sad path 2
+  steps:
+  - intent: ask_new_notebook
+  - action: utter_ask_new_notebook
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask open happy path
+  steps:
+  - intent: ask_open
+  - action: utter_ask_open
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+
+- story: ask open sad path 1
+  steps:
+  - intent: ask_open
+  - action: utter_ask_open
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+
+- story: ask open sad path 2
+  steps:
+  - intent: ask_open
+  - action: utter_ask_open
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask make a copy happy path
+  steps:
+  - intent: ask_make_a_copy
+  - action: utter_ask_make_a_copy
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+
+- story: ask make a copy sad path 1
+  steps:
+  - intent: ask_make_a_copy
+  - action: utter_ask_make_a_copy
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+
+- story: ask make a copy sad path 2
+  steps:
+  - intent: ask_make_a_copy
+  - action: utter_ask_make_a_copy
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask save as path
+  steps:
+  - intent: ask_save_as
+  - action: utter_ask_save_as
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+
+- story: ask save as path 1
+  steps:
+  - intent: ask_save_as
+  - action: utter_ask_save_as
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+
+- story: ask save as path 2
+  steps:
+  - intent: ask_save_as
+  - action: utter_ask_save_as
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask rename path
+  steps:
+  - intent: ask_rename
+  - action: utter_ask_rename
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+
+- story: ask rename path 1
+  steps:
+  - intent: ask_rename
+  - action: utter_ask_rename
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+
+- story: ask rename path 2
+  steps:
+  - intent: ask_rename
+  - action: utter_ask_rename
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask save and checkpoint path
+  steps:
+  - intent: ask_save_and_checkpoint
+  - action: utter_ask_save_and_checkpoint
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+
+- story: ask save and checkpoint path 1
+  steps:
+  - intent: ask_save_and_checkpoint
+  - action: utter_ask_save_and_checkpoint
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+
+- story: ask save and checkpoint path 2
+  steps:
+  - intent: ask_save_and_checkpoint
+  - action: utter_ask_save_and_checkpoint
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask revert to checkpoint path
+  steps:
+  - intent: ask_revert_to_checkpoint
+  - action: utter_ask_revert_to_checkpoint
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+
+- story: ask revert to checkpoint path 1
+  steps:
+  - intent: ask_revert_to_checkpoint
+  - action: utter_ask_revert_to_checkpoint
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+
+- story: ask revert to checkpoint path 2
+  steps:
+  - intent: ask_revert_to_checkpoint
+  - action: utter_ask_revert_to_checkpoint
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask print preview path
+  steps:
+  - intent: ask_print_preview
+  - action: utter_ask_print_preview
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+
+- story: ask print preview path 1
+  steps:
+  - intent: ask_print_preview
+  - action: utter_ask_print_preview
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+
+- story: ask print preview path 2
+  steps:
+  - intent: ask_print_preview
+  - action: utter_ask_print_preview
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask download as path
+  steps:
+  - intent: ask_download_as
+  - action: utter_ask_download_as
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+
+- story: ask download as path 1
+  steps:
+  - intent: ask_download_as
+  - action: utter_ask_download_as
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+
+- story: ask download as path 2
+  steps:
+  - intent: ask_download_as
+  - action: utter_ask_download_as
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask close and halt path
+  steps:
+  - intent: ask_close_and_halt
+  - action: utter_ask_close_and_halt
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+
+- story: ask close and halt path 1
+  steps:
+  - intent: ask_close_and_halt
+  - action: utter_ask_close_and_halt
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+
+- story: ask close and halt path 2
+  steps:
+  - intent: ask_close_and_halt
+  - action: utter_ask_close_and_halt
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask cut cells
+  steps:
+  - intent: ask_cut_cells
+  - action: utter_ask_cut_cells
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+
+- story: ask cut cells path 1
+  steps:
+  - intent: ask_cut_cells
+  - action: utter_ask_cut_cells
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+
+- story: ask cut cells path 2
+  steps:
+  - intent: ask_cut_cells
+  - action: utter_ask_cut_cells
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask copy cells path
+  steps:
+  - intent: ask_copy_cells
+  - action: utter_ask_copy_cells
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+
+- story: ask copy cells path 1
+  steps:
+  - intent: ask_copy_cells
+  - action: utter_ask_copy_cells
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+
+- story: ask copy cells path 2
+  steps:
+  - intent: ask_copy_cells
+  - action: utter_ask_copy_cells
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask paste cells above path
+  steps:
+  - intent: ask_paste_cells_above
+  - action: utter_ask_paste_cells_above
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+
+- story: ask paste cells above path 1
+  steps:
+  - intent: ask_paste_cells_above
+  - action: utter_ask_paste_cells_above
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+
+- story: ask paste cells above path 2
+  steps:
+  - intent: ask_paste_cells_above
+  - action: utter_ask_paste_cells_above
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask paste cells below path
+  steps:
+  - intent: ask_paste_cells_below
+  - action: utter_ask_paste_cells_below
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+
+- story: ask paste cells below path 1
+  steps:
+  - intent: ask_paste_cells_below
+  - action: utter_ask_paste_cells_below
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+
+- story: ask paste cells below path 2
+  steps:
+  - intent: ask_paste_cells_below
+  - action: utter_ask_paste_cells_below
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask delete cells path
+  steps:
+  - intent: ask_delete_cells
+  - action: utter_ask_delete_cells
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+
+- story: ask delete cells path 1
+  steps:
+  - intent: ask_delete_cells
+  - action: utter_ask_delete_cells
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+
+- story: ask delete cells path 2
+  steps:
+  - intent: ask_delete_cells
+  - action: utter_ask_delete_cells
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask undo delete cells path
+  steps:
+  - intent: ask_undo_delete_cells
+  - action: utter_ask_undo_delete_cells
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+
+- story: ask undo delete cells path 1
+  steps:
+  - intent: ask_undo_delete_cells
+  - action: utter_ask_undo_delete_cells
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+
+- story: ask undo delete cells path 2
+  steps:
+  - intent: ask_undo_delete_cells
+  - action: utter_ask_undo_delete_cells
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask split cell path
+  steps:
+  - intent: ask_split_cell
+  - action: utter_ask_split_cell
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+
+- story: ask split cell path 1
+  steps:
+  - intent: ask_split_cell
+  - action: utter_ask_split_cell
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+
+- story: ask split cell path 2
+  steps:
+  - intent: ask_split_cell
+  - action: utter_ask_split_cell
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask merge cell above path
+  steps:
+  - intent: ask_merge_cell_above
+  - action: utter_ask_merge_cell_above
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+
+- story: ask merge cell above path 1
+  steps:
+  - intent: ask_merge_cell_above
+  - action: utter_ask_merge_cell_above
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+
+- story: ask merge cell above path 2
+  steps:
+  - intent: ask_merge_cell_above
+  - action: utter_ask_merge_cell_above
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask merge cell below path
+  steps:
+  - intent: ask_merge_cell_below
+  - action: utter_ask_merge_cell_below
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+
+- story: ask merge cell below path 1
+  steps:
+  - intent: ask_merge_cell_below
+  - action: utter_ask_merge_cell_below
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+
+- story: ask merge cell below path 2
+  steps:
+  - intent: ask_merge_cell_below
+  - action: utter_ask_merge_cell_below
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask move cell up path
+  steps:
+  - intent: ask_move_cell_up
+  - action: utter_ask_move_cell_up
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+
+- story: ask move cell up path 1
+  steps:
+  - intent: ask_move_cell_up
+  - action: utter_ask_move_cell_up
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+
+- story: ask move cell up path 2
+  steps:
+  - intent: ask_move_cell_up
+  - action: utter_ask_move_cell_up
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask move cell down path
+  steps:
+  - intent: ask_move_cell_down
+  - action: utter_ask_move_cell_down
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+
+- story: ask move cell down path 1
+  steps:
+  - intent: ask_move_cell_down
+  - action: utter_ask_move_cell_down
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+
+- story: ask move cell down path 2
+  steps:
+  - intent: ask_move_cell_down
+  - action: utter_ask_move_cell_down
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask edit notebook metadata path
+  steps:
+  - intent: ask_edit_notebook_metadata
+  - action: utter_ask_edit_notebook_metadata
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+
+- story: ask edit notebook metadata path 1
+  steps:
+  - intent: ask_edit_notebook_metadata
+  - action: utter_ask_edit_notebook_metadata
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+
+- story: ask edit notebook metadata path 2
+  steps:
+  - intent: ask_edit_notebook_metadata
+  - action: utter_ask_edit_notebook_metadata
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask find and replace path
+  steps:
+  - intent: ask_find_and_replace
+  - action: utter_ask_find_and_replace
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+
+- story: ask find and replace path 1
+  steps:
+  - intent: ask_find_and_replace
+  - action: utter_ask_find_and_replace
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+
+- story: ask find and replace path 2
+  steps:
+  - intent: ask_find_and_replace
+  - action: utter_ask_find_and_replace
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask cut cell attachment path
+  steps:
+  - intent: ask_cut_cell_attachment
+  - action: utter_ask_cut_cell_attachment
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+
+- story: ask cut cell attachment path 1
+  steps:
+  - intent: ask_cut_cell_attachment
+  - action: utter_ask_cut_cell_attachment
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+
+- story: ask cut cell attachment path 2
+  steps:
+  - intent: ask_cut_cell_attachment
+  - action: utter_ask_cut_cell_attachment
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask copy cell attachment path
+  steps:
+  - intent: ask_copy_cell_attachment
+  - action: utter_ask_copy_cell_attachment
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+
+- story: ask copy cell attachment path 1
+  steps:
+  - intent: ask_copy_cell_attachment
+  - action: utter_ask_copy_cell_attachment
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+
+- story: ask copy cell attachment path 2
+  steps:
+  - intent: ask_copy_cell_attachment
+  - action: utter_ask_copy_cell_attachment
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask paste cell attachment path
+  steps:
+  - intent: ask_paste_cell_attachment
+  - action: utter_ask_paste_cell_attachment
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+
+- story: ask paste cell attachment path 1
+  steps:
+  - intent: ask_paste_cell_attachment
+  - action: utter_ask_paste_cell_attachment
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+
+- story: ask paste cell attachment path 2
+  steps:
+  - intent: ask_paste_cell_attachment
+  - action: utter_ask_paste_cell_attachment
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask insert image path
+  steps:
+  - intent: ask_insert_image
+  - action: utter_ask_insert_image
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+
+- story: ask insert image path 1
+  steps:
+  - intent: ask_insert_image
+  - action: utter_ask_insert_image
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+
+- story: ask insert image path 2
+  steps:
+  - intent: ask_insert_image
+  - action: utter_ask_insert_image
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask handling text path
+  steps:
+  - intent: ask_NLTK_handling_text
+  - action: utter_ask_NLTK_handling_text
+  - action: utter_more_code
+
+- story: ask accessing corpora and lexical resources path
+  steps:
+  - intent: ask_NLTK_accessing_corpora_and_lexical_resources
+  - action: utter_ask_NLTK_accessing_corpora_and_lexical_resources
+  - action: utter_more_code
+
+- story: ask tokenization path
+  steps:
+  - intent: ask_NLTK_tokenization
+  - action: utter_ask_NLTK_tokenization
+  - action: utter_more_code
+
+- story: ask lemmatization and stemming path
+  steps:
+  - intent: ask_NLTK_lemmatization_and_stemming
+  - action: utter_ask_NLTK_lemmatization_and_stemming
+  - action: utter_more_code
+
+- story: ask part of speech tagging path
+  steps:
+  - intent: ask_NLTK_part_of_speech_tagging
+  - action: utter_ask_NLTK_part_of_speech_tagging
+  - action: utter_more_code
+
+- story: ask sentence parsing path
+  steps:
+  - intent: ask_NLTK_sentence_parsing
+  - action: utter_ask_NLTK_sentence_parsing
+  - action: utter_more_code
+
+- story: ask text classification path
+  steps:
+  - intent: ask_NLTK_text_classification
+  - action: utter_ask_NLTK_text_classification
+  - action: utter_more_code
+
+- story: ask entity recognition path
+  steps:
+  - intent: ask_NLTK_entity_recognition
+  - action: utter_ask_NLTK_entity_recognition
+  - action: utter_more_code
+
+- story: ask creating arrays path
+  steps:
+  - intent: ask_Numpy_creating_arrays
+  - action: utter_ask_Numpy_creating_arrays
+  - action: utter_more_code
+
+- story: ask inspecting your array path
+  steps:
+  - intent: ask_Numpy_inspecting_your_array
+  - action: utter_ask_Numpy_inspecting_your_array
+  - action: utter_more_code
+
+- story: ask array mathematics path
+  steps:
+  - intent: ask_Numpy_array_mathematics
+  - action: utter_ask_Numpy_array_mathematics
+  - action: utter_more_code
+
+- story: ask array manipulation path
+  steps:
+  - intent: ask_Numpy_array_manipulation
+  - action: utter_ask_Numpy_array_manipulation
+  - action: utter_more_code

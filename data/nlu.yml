@@ -1,0 +1,674 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent : out_of_scope
+  examples: |
+    - that's not what I want to do.
+    - wait stop.
+    - you're no help.
+    - this is no help at all.
+    - how old are you?
+    - I want to order a pizza.
+    - tell me the weather.
+    - this isn't working.
+    - I already told you that.
+    - don't like that.
+    - I don't want to tell you that.
+    - none of your business.
+    - that's not right.
+    - stop asking.
+    - nevermind.
+    - I want to do something else.
+    - I changed my mind.
+
+- intent: ask_Jupyter
+  examples: |
+    - [Jupyter notebook]{"entity": "Jupyter"}
+    - [Jupyter]{"entity": "Jupyter"}
+    - Do you know [Jupyter notebook]{"entity": "Jupyter"}?
+    - Do you know [Jupyter]{"entity": "Jupyter"}?
+    - What can I learn from you about [Jupyter notebook]{"entity": "Jupyter"}?
+    - What can I learn from you about [Jupyter]{"entity": "Jupyter"}?
+    - I want to know more about [Jupyter notebook]{"entity": "Jupyter"}.
+    - I want to know more about [Jupyter]{"entity": "Jupyter"}.
+    - I'd like to learn something about [Jupyter notebook]{"entity": "Jupyter"}.
+    - I'd like to learn something about [Jupyter]{"entity": "Jupyter"}.
+    - Can you tell me more about [Jupyter notebook]{"entity": "Jupyter"}?
+    - Can you tell me more about [Jupyter]{"entity": "Jupyter"}?
+    - Show me the knowledge of [Jupyter notebook]{"entity": "Jupyter"}.
+    - Show me the knowledge of [Jupyter]{"entity": "Jupyter"}.
+    - I'd prefer to gain knowledge of [Jupyter notebook]{"entity": "Jupyter"}.
+    - I'd prefer to gain knowledge of [Jupyter]{"entity": "Jupyter"}.
+    - I would appreciate to learn [Jupyter notebook]{"entity": "Jupyter"}.
+    - I would appreciate to learn [Jupyter]{"entity": "Jupyter"}.
+
+- intent: ask_NLTK
+  examples: |
+    - [NLTK]{"entity": "NLTK"}
+    - Do you know [NLTK]{"entity": "NLTK"}?
+    - what can I learn from you about [NLTK]{"entity": "NLTK"}?
+    - I want to know more about [NLTK]{"entity": "NLTK"}.
+    - I'd like to learn something about [NLTK]{"entity": "NLTK"}.
+    - Can you tell me more about [NLTK]{"entity": "NLTK"}?
+    - Show me the knowledge of [NLTK]{"entity": "NLTK"}.
+    - I'd prefer to gain knowledge of [NLTK]{"entity": "NLTK"}.
+    - I would appreciate to learn [NLTK]{"entity": "NLTK"}.
+
+- intent: ask_Numpy
+  examples: |
+    - [Numpy]{"entity": "Numpy"}
+    - Do you know [Numpy]{"entity": "Numpy"}?
+    - what can I learn from you about [Numpy]{"entity": "Numpy"}?
+    - I want to know more about [Numpy]{"entity": "Numpy"}.
+    - I'd like to learn something about [Numpy]{"entity": "Numpy"}.
+    - Can you tell me more about [Numpy]{"entity": "Numpy"}?
+    - Show me the knowledge of [Numpy]{"entity": "Numpy"}.
+    - I'd prefer to gain knowledge of [Numpy]{"entity": "Numpy"}.
+    - I would appreciate to learn [Numpy]{"entity": "Numpy"}.
+
+- intent: ask_new_notebook
+  examples: |
+    - [new notebook]{"entity": "new notebook"}
+    - I'd like to know the meaning of [new notebook]{"entity": "new notebook"}.
+    - I'd like to know the function of [new notebook]{"entity": "new notebook"}.
+    - Explain [new notebook]{"entity": "new notebook"} to me.
+    - How does [new notebook]{"entity": "new notebook"} work?
+    - Can you show me the functions of [new notebook]{"entity": "new notebook"}?
+    - I need a brief introduction of [new notebook]{"entity": "new notebook"}.
+  # - What can I do with [new notebook]{"entity": "new notebook"}?
+  # - I need help on how to use [new notebook]{"entity": "new notebook"}.
+  # - Tell me something about [new notebook]{"entity": "new notebook"}.
+
+- intent: ask_open
+  examples: |
+    - [open]{"entity": "open"}
+    - I'd like to know the meaning of [open]{"entity": "open"}.
+    - I'd like to know the function of [open]{"entity": "open"}.
+    - Explain [open]{"entity": "open"} to me.
+    - How does [open]{"entity": "open"} work?
+    - I need help on how to use [open]{"entity": "open"}.
+    - Tell me something about [open]{"entity": "open"}.
+  # - Can you show me the functions of [open]{"entity": "open"}?
+  # - I need a brief introduction of [open]{"entity": "open"}.
+  # - What can I do with [open]{"entity": "open"}?
+
+
+- intent: ask_make_a_copy
+  examples: |
+    - I'd like to know the function of [make a copy]{"entity": "make a copy"}.
+    - How does [make a copy]{"entity": "make a copy"} work?
+    - Can you show me the functions of [make a copy]{"entity": "make a copy"}?
+    - I need a brief introduction of [make a copy]{"entity": "make a copy"}.
+    - What can I do with [make a copy]{"entity": "make a copy"}?
+    - I need help on how to use [make a copy]{"entity": "make a copy"}.
+    - Tell me something about [make a copy]{"entity": "make a copy"}.
+  # - [make a copy]{"entity": "make a copy"}
+  # - I'd like to know the meaning of [make a copy]{"entity": "make a copy"}.
+  # - Explain [make a copy]{"entity": "make a copy"} to me.
+
+- intent: ask_save_as
+  examples: |
+    - [save as]{"entity": "save as"}
+    - I'd like to know the meaning of [save as]{"entity": "save as"}.
+    - I'd like to know the function of [save as]{"entity": "save as"}.
+    - Explain [save as]{"entity": "save as"} to me.
+    - How does [save as]{"entity": "save as"} work?
+    - Can you show me the functions of [save as]{"entity": "save as"}?
+    - I need a brief introduction of [save as]{"entity": "save as"}.
+    - I need help on how to use [save as]{"entity": "save as"}.
+    - Tell me something about [save as]{"entity": "save as"}.
+  # - What can I do with [save as]{"entity": "save as"}?
+
+- intent: ask_rename
+  examples: |
+    - [rename]{"entity": "rename"}
+    - I'd like to know the meaning of [rename]{"entity": "rename"}.
+    - I'd like to know the function of [rename]{"entity": "rename"}.
+    - Explain [rename]{"entity": "rename"} to me.
+    - How does [rename]{"entity": "rename"} work?
+    - Can you show me the functions of [rename]{"entity": "rename"}?
+    - I need a brief introduction of [rename]{"entity": "rename"}.
+    - What can I do with [rename]{"entity": "rename"}?
+    - I need help on how to use [rename]{"entity": "rename"}.
+    - Tell me something about [rename]{"entity": "rename"}.
+
+- intent: ask_save_and_checkpoint
+  examples: |
+    - [save and checkpoint]{"entity": "save and checkpoint"}
+    - I'd like to know the meaning of [save and checkpoint]{"entity": "save and checkpoint"}.
+    - I'd like to know the function of [save and checkpoint]{"entity": "save and checkpoint"}.
+    - Explain [save and checkpoint]{"entity": "save and checkpoint"} to me.
+    - How does [save and checkpoint]{"entity": "save and checkpoint"} work?
+    - Can you show me the functions of [save and checkpoint]{"entity": "save and checkpoint"}?
+    - I need a brief introduction of [save and checkpoint]{"entity": "save and checkpoint"}.
+    - What can I do with [save and checkpoint]{"entity": "save and checkpoint"}?
+    - I need help on how to use [save and checkpoint]{"entity": "save and checkpoint"}.
+    - Tell me something about [save and checkpoint]{"entity": "save and checkpoint"}.
+
+- intent: ask_revert_to_checkpoint
+  examples: |
+    - [revert to checkpoint]{"entity": "revert to checkpoint"}
+    - I'd like to know the meaning of [revert to checkpoint]{"entity": "revert to checkpoint"}.
+    - I'd like to know the function of [revert to checkpoint]{"entity": "revert to checkpoint"}.
+    - Explain [revert to checkpoint]{"entity": "revert to checkpoint"} to me.
+    - How does [revert to checkpoint]{"entity": "revert to checkpoint"} work?
+    - Can you show me the functions of [revert to checkpoint]{"entity": "revert to checkpoint"}?
+    - I need a brief introduction of [revert to checkpoint]{"entity": "revert to checkpoint"}.
+    - What can I do with [revert to checkpoint]{"entity": "revert to checkpoint"}?
+    - I need help on how to use [revert to checkpoint]{"entity": "revert to checkpoint"}.
+    - Tell me something about [revert to checkpoint]{"entity": "revert to checkpoint"}.
+
+- intent: ask_print_preview
+  examples: |
+    - [print preview]{"entity": "print preview"}
+    - I'd like to know the meaning of [print preview]{"entity": "print preview"}.
+    - I'd like to know the function of [print preview]{"entity": "print preview"}.
+    - Explain [print preview]{"entity": "print preview"} to me.
+    - How does [print preview]{"entity": "print preview"} work?
+    - Can you show me the functions of [print preview]{"entity": "print preview"}?
+    - I need a brief introduction of [print preview]{"entity": "print preview"}.
+    - What can I do with [print preview]{"entity": "print preview"}?
+    - I need help on how to use [print preview]{"entity": "print preview"}.
+    - Tell me something about [print preview]{"entity": "print preview"}.  
+
+- intent: ask_download_as
+  examples: |
+    - [download as]{"entity": "download as"}
+    - I'd like to know the meaning of [download as]{"entity": "download as"}.
+    - I'd like to know the function of [download as]{"entity": "download as"}.
+    - Explain [download as]{"entity": "download as"} to me.
+    - How does [download as]{"entity": "download as"} work?
+    - Can you show me the functions of [download as]{"entity": "download as"}?
+    - I need a brief introduction of [download as]{"entity": "download as"}.
+    - What can I do with [download as]{"entity": "download as"}?
+    - I need help on how to use [download as]{"entity": "download as"}.
+    - Tell me something about [download as]{"entity": "download as"}.
+
+- intent: ask_close_and_halt
+  examples: |
+    - [close and halt]{"entity": "close and halt"}
+    - I'd like to know the meaning of [close and halt]{"entity": "close and halt"}.
+    - I'd like to know the function of [close and halt]{"entity": "close and halt"}.
+    - Explain [close and halt]{"entity": "close and halt"} to me.
+    - How does [close and halt]{"entity": "close and halt"} work?
+    - Can you show me the functions of [close and halt]{"entity": "close and halt"}?
+    - I need a brief introduction of [close and halt]{"entity": "close and halt"}.
+    - What can I do with [close and halt]{"entity": "close and halt"}?
+    - I need help on how to use [close and halt]{"entity": "close and halt"}.
+    - Tell me something about [close and halt]{"entity": "close and halt"}.
+
+- intent: ask_cut_cells
+  examples: |
+    - [cut cells]{"entity": "cut cells"}
+    - I'd like to know the meaning of [cut cells]{"entity": "cut cells"}.
+    - I'd like to know the function of [cut cells]{"entity": "cut cells"}.
+    - Can you show me the functions of [cut cells]{"entity": "cut cells"}?
+    - I need a brief introduction of [cut cells]{"entity": "cut cells"}.
+    - What can I do with [cut cells]{"entity": "cut cells"}?
+    - I need help on how to use [cut cells]{"entity": "cut cells"}.
+#   - Tell me something about [cut cells]{"entity": "cut cells"}.
+#   - Explain [cut cells]{"entity": "cut cells"} to me.
+#   - How does [cut cells]{"entity": "cut cells"} work?
+
+- intent: ask_copy_cells
+  examples: |
+    - [copy cells]{"entity": "copy cells"}
+    - I'd like to know the function of [copy cells]{"entity": "copy cells"}.
+    - Explain [copy cells]{"entity": "copy cells"} to me.
+    - I need a brief introduction of [copy cells]{"entity": "copy cells"}.
+    - What can I do with [copy cells]{"entity": "copy cells"}?
+    - I need help on how to use [copy cells]{"entity": "copy cells"}.
+    - Tell me something about [copy cells]{"entity": "copy cells"}.
+#    - How does [copy cells]{"entity": "copy cells"} work?
+#    - Can you show me the functions of [copy cells]{"entity": "copy cells"}?
+#    - I'd like to know the meaning of [copy cells]{"entity": "copy cells"}.
+
+- intent: ask_paste_cells_above
+  examples: |
+    - I'd like to know the meaning of [paste cells above]{"entity": "paste_cells_above"}.
+    - I'd like to know the function of [paste cells above]{"entity": "paste_cells_above"}.
+    - Explain [paste cells above]{"entity": "paste_cells_above"} to me.
+    - How does [paste cells above]{"entity": "paste_cells_above"} work?
+    - Can you show me the functions of [paste cells above]{"entity": "paste_cells_above"}?
+    - I need a brief introduction of [paste cells above]{"entity": "paste_cells_above"}.
+    - What can I do with [paste cells above]{"entity": "paste_cells_above"}?
+#    - I need help on how to use [paste cells above]{"entity": "paste_cells_above"}.
+#    - Tell me something about [paste cells above]{"entity": "paste_cells_above"}.
+#    - [paste cells above]{"entity": "paste_cells_above"}
+
+- intent: ask_paste_cells_below
+  examples: |
+    - I'd like to know the meaning of [paste cells below]{"entity": "paste_cells_below"}.
+    - I'd like to know the function of [paste cells below]{"entity": "paste_cells_below"}.
+    - Explain [paste cells below]{"entity": "paste_cells_below"} to me.
+    - How does [paste cells below]{"entity": "paste_cells_below"} work?
+    - I need a brief introduction of [paste cells below]{"entity": "paste_cells_below"}.
+    - What can I do with [paste cells below]{"entity": "paste_cells_below"}?
+    - I need help on how to use [paste cells below]{"entity": "paste_cells_below"}.
+#    - Tell me something about [paste cells below]{"entity": "paste_cells_below"}.
+#    - [paste cells below]{"entity": "paste_cells_below"}
+#    - Can you show me the functions of [paste cells below]{"entity": "paste_cells_below"}?
+
+- intent: ask_paste_cells_and_replace
+  examples: |
+    - [paste cells and replace]{"entity": "paste_cells_and_replace"}
+    - I'd like to know the function of [paste cells and replace]{"entity": "paste_cells_and_replace"}.
+    - Explain [paste cells and replace]{"entity": "paste_cells_and_replace"} to me.
+    - Can you show me the functions of [paste cells and replace]{"entity": "paste_cells_and_replace"}?
+    - What can I do with [paste cells and replace]{"entity": "paste_cells_and_replace"}?
+    - I need help on how to use [paste cells and replace]{"entity": "paste_cells_and_replace"}.
+    - Tell me something about [paste cells and replace]{"entity": "paste_cells_and_replace"}.
+#    - I'd like to know the meaning of [paste cells and replace]{"entity": "paste_cells_and_replace"}. 
+#    - How does [paste cells and replace]{"entity": "paste_cells_and_replace"} work? 
+#    - I need a brief introduction of [paste cells and replace]{"entity": "paste_cells_and_replace"}.
+
+- intent: ask_delete_cells
+  examples: |
+    - I'd like to know the meaning of [delete cells]{"entity": "delete_cells"}.
+    - How does [delete cells]{"entity": "delete_cells"} work?
+    - Can you show me the functions of [delete cells]{"entity": "delete_cells"}?
+    - I need a brief introduction of [delete cells]{"entity": "delete_cells"}.
+    - What can I do with [delete cells]{"entity": "delete_cells"}?
+    - I need help on how to use [delete cells]{"entity": "delete_cells"}.
+    - Tell me something about [delete cells]{"entity": "delete_cells"}.
+#    - [delete cells]{"entity": "delete_cells"}
+#    - I'd like to know the function of [delete cells]{"entity": "delete_cells"}.
+#    - Explain [delete cells]{"entity": "delete_cells"} to me.    
+
+- intent: ask_undo_delete_cells
+  examples: |
+    - I'd like to know the meaning of [undo delete cells]{"entity": "undo_delete_cells"}.
+    - I'd like to know the function of [undo delete cells]{"entity": "undo_delete_cells"}.
+    - Explain [undo delete cells]{"entity": "undo_delete_cells"} to me.
+    - I need a brief introduction of [undo delete cells]{"entity": "undo_delete_cells"}.
+    - What can I do with [undo delete cells]{"entity": "undo_delete_cells"}?
+    - I need help on how to use [undo delete cells]{"entity": "undo_delete_cells"}.
+    - Tell me something about [undo delete cells]{"entity": "undo_delete_cells"}.
+#    - [undo delete cells]{"entity": "undo_delete_cells"}
+#    - How does [undo delete cells]{"entity": "undo_delete_cells"} work?
+#    - Can you show me the functions of [undo delete cells]{"entity": "undo_delete_cells"}?    
+
+- intent: ask_split_cells
+  examples: |
+    - [split cells]{"entity": "split_cells"}
+    - I'd like to know the meaning of [split cells]{"entity": "split_cells"}.
+    - I'd like to know the function of [split cells]{"entity": "split_cells"}.
+    - Explain [split cells]{"entity": "split_cells"} to me.
+    - How does [split cells]{"entity": "split_cells"} work?
+    - Can you show me the functions of [split cells]{"entity": "split_cells"}?
+    - Tell me something about [split cells]{"entity": "split_cells"}.
+#    - I need a brief introduction of [split cells]{"entity": "split_cells"}.
+#    - What can I do with [split cells]{"entity": "split_cells"}?
+#    - I need help on how to use [split cells]{"entity": "split_cells"}.    
+
+- intent: ask_merge_cell_above
+  examples: |
+    - I'd like to know the meaning of [merge cell above]{"entity": "merge_cell_above"}.
+    - I'd like to know the function of [merge cell above]{"entity": "merge_cell_above"}.
+    - How does [merge cell above]{"entity": "merge_cell_above"} work?
+    - Can you show me the functions of [merge cell above]{"entity": "merge_cell_above"}?
+    - I need a brief introduction of [merge cell above]{"entity": "merge_cell_above"}.
+    - I need help on how to use [merge cell above]{"entity": "merge_cell_above"}.
+    - Tell me something about [merge cell above]{"entity": "merge_cell_above"}.
+#    - [merge cell above]{"entity": "merge_cell_above"}
+#    - Explain [merge cell above]{"entity": "merge_cell_above"} to me.
+#    - What can I do with [merge cell above]{"entity": "merge_cell_above"}?
+
+- intent: ask_move_cell_up
+  examples: |
+    - [move cell up]{"entity": "move_cell_up"}
+    - I'd like to know the function of [move cell up]{"entity": "move_cell_up"}.
+    - Explain [move cell up]{"entity": "move_cell_up"} to me.
+    - How does [move cell up]{"entity": "move_cell_up"} work?
+    - I need a brief introduction of [move cell up]{"entity": "move_cell_up"}.
+    - What can I do with [move cell up]{"entity": "move_cell_up"}?
+    - I need help on how to use [move cell up]{"entity": "move_cell_up"}.
+    - Tell me something about [move cell up]{"entity": "move_cell_up"}.
+#    - how to [move cell up]{"entity": "move_cell_up"}?
+#    - I'd like to know the meaning of [move cell up]{"entity": "move_cell_up"}.
+#    - Can you show me the functions of [move cell up]{"entity": "move_cell_up"}?    
+
+- intent: ask_move_cell_down
+  examples: |
+    - [move cell down]{"entity": "move_cell_down"}
+    - how to [move cell down]{"entity": "move_cell_down"}
+    - I'd like to know the meaning of [move cell down]{"entity": "move_cell_down"}.
+    - I'd like to know the function of [move cell down]{"entity": "move_cell_down"}.
+    - Explain [move cell down]{"entity": "move_cell_down"} to me.
+    - How does [move cell down]{"entity": "move_cell_down"} work?
+    - Can you show me the functions of [move cell down]{"entity": "move_cell_down"}?
+    - What can I do with [move cell down]{"entity": "move_cell_down"}?
+#    - I need help on how to use [move cell down]{"entity": "move_cell_down"}.
+#    - Tell me something about [move cell down]{"entity": "move_cell_down"}.
+#    - I need a brief introduction of [move cell down]{"entity": "move_cell_down"}.
+
+- intent: ask_edit_notebook_metadata
+  examples: |
+    - [edit notebook metadata]{"entity": "edit_notebook_metadata"}
+    - I'd like to know the meaning of [edit notebook metadata]{"entity": "edit_notebook_metadata"}.
+    - Explain [edit notebook metadata]{"entity": "edit_notebook_metadata"} to me.
+    - How does [edit notebook metadata]{"entity": "edit_notebook_metadata"} work?
+    - I need a brief introduction of [edit notebook metadata]{"entity": "edit_notebook_metadata"}.
+    - What can I do with [edit notebook metadata]{"entity": "edit_notebook_metadata"}?
+    - I need help on how to use [edit notebook metadata]{"entity": "edit_notebook_metadata"}.
+    - Tell me something about [edit notebook metadata]{"entity": "edit_notebook_metadata"}.
+#    - what can I do with [edit notebook metadata]{"entity": "edit_notebook_metadata"}
+#    - I'd like to know the function of [edit notebook metadata]{"entity": "edit_notebook_metadata"}.
+#    - Can you show me the functions of [edit notebook metadata]{"entity": "edit_notebook_metadata"}?    
+
+- intent: ask_find_and_replace
+  examples: |
+    - tell me about [find and replace]{"entity": "find_and_replace"}
+    - I'd like to know the meaning of [find and replace]{"entity": "find_and_replace"}.
+    - I'd like to know the function of [find and replace]{"entity": "find_and_replace"}.
+    - Explain [find and replace]{"entity": "find_and_replace"} to me.
+    - How does [find and replace]{"entity": "find_and_replace"} work?
+    - I need a brief introduction of [find and replace]{"entity": "find_and_replace"}.
+    - I need help on how to use [find and replace]{"entity": "find_and_replace"}.
+    - Tell me something about [find and replace]{"entity": "find_and_replace"}.
+#    - [find and replace]{"entity": "find_and_replace"}
+#    - Can you show me the functions of [find and replace]{"entity": "find_and_replace"}? 
+#    - What can I do with [find and replace]{"entity": "find_and_replace"}?  
+
+- intent: ask_cut_cell_attachment
+  examples: |
+    - [cut cell attachment]{"entity": "cut_cell_attachment"}
+    - what can I do with [cut cell attachment]{"entity": "cut_cell_attachment"}
+    - I'd like to know the meaning of [cut cell attachment]{"entity": "cut_cell_attachment"}.
+    - I'd like to know the function of [cut cell attachment]{"entity": "cut_cell_attachment"}.
+    - Can you show me the functions of [cut cell attachment]{"entity": "cut_cell_attachment"}?
+    - I need a brief introduction of [cut cell attachment]{"entity": "cut_cell_attachment"}.
+    - I need help on how to use [cut cell attachment]{"entity": "cut_cell_attachment"}.
+    - Tell me something about [cut cell attachment]{"entity": "cut_cell_attachment"}.
+#    - Explain [cut cell attachment]{"entity": "cut_cell_attachment"} to me.
+#    - How does [cut cell attachment]{"entity": "cut_cell_attachment"} work?
+#    - What can I do with [cut cell attachment]{"entity": "cut_cell_attachment"}?   
+
+- intent: ask_copy_cell_attachment
+  examples: |
+    - [copy cell attachment]{"entity": "copy_cell_attachment"}
+    - what can I do with [copy cell attachment]{"entity": "copy_cell_attachment"}
+    - I'd like to know the meaning of [copy cell attachment]{"entity": "copy_cell_attachment"}.
+    - I'd like to know the function of [copy cell attachment]{"entity": "copy_cell_attachment"}.
+    - Explain [copy cell attachment]{"entity": "copy_cell_attachment"} to me.
+    - How does [copy cell attachment]{"entity": "copy_cell_attachment"} work?
+    - I need help on how to use [copy cell attachment]{"entity": "copy_cell_attachment"}.
+    - Tell me something about [copy cell attachment]{"entity": "copy_cell_attachment"}.
+#    - Can you show me the functions of [copy cell attachment]{"entity": "copy_cell_attachment"}?
+#    - I need a brief introduction of [copy cell attachment]{"entity": "copy_cell_attachment"}.
+#    - What can I do with [copy cell attachment]{"entity": "copy_cell_attachment"}?    
+
+- intent: ask_paste_cell_attachment
+  examples: |
+    - what can I do with [paste cell attachment]{"entity": "paste_cell_attachment"}
+    - I'd like to know the meaning of [paste cell attachment]{"entity": "paste_cell_attachment"}.
+    - I'd like to know the function of [paste cell attachment]{"entity": "paste_cell_attachment"}.
+    - How does [paste cell attachment]{"entity": "paste_cell_attachment"} work?
+    - Can you show me the functions of [paste cell attachment]{"entity": "paste_cell_attachment"}?
+    - I need a brief introduction of [paste cell attachment]{"entity": "paste_cell_attachment"}.
+    - I need help on how to use [paste cell attachment]{"entity": "paste_cell_attachment"}.
+    - Tell me something about [paste cell attachment]{"entity": "paste_cell_attachment"}.
+#    - [paste cell attachment]{"entity": "paste_cell_attachment"}
+#    - Explain [paste cell attachment]{"entity": "paste_cell_attachment"} to me.
+#    - What can I do with [paste cell attachment]{"entity": "paste_cell_attachment"}?
+
+- intent: ask_insert_image
+  examples: |
+    - [insert image]{"entity": "insert_image"}
+    - I'd like to know the meaning of [insert image]{"entity": "insert_image"}.
+    - I'd like to know the function of [insert image]{"entity": "insert_image"}.
+    - Explain [insert image]{"entity": "insert_image"} to me.
+    - I need a brief introduction of [insert image]{"entity": "insert_image"}.
+    - What can I do with [insert image]{"entity": "insert_image"}?
+    - I need help on how to use [insert image]{"entity": "insert_image"}.
+    - Tell me something about [insert image]{"entity": "insert_image"}.
+#    - tell me more about [insert image]{"entity": "insert_image"}
+#    - How does [insert image]{"entity": "insert_image"} work?
+#    - Can you show me the functions of [insert image]{"entity": "insert_image"}?
+
+- intent: ask_NLTK_handling_text
+  examples: |
+    - [handling text]{"entity": "NLTK_handling_text"}
+    - What is the command list for [handling text]{"entity": "NLTK_handling_text"}?
+    - What should I type in if I am going to [handle text]{"entity": "NLTK_handling_text"} words?
+    - Command line for [handling text]{"entity": "NLTK_handling_text"}.
+    - what commands can I run when I [handle text]{"entity": "NLTK_handling_text"}?
+    - what do I do when [handling text]{"entity": "NLTK_handling_text"}.
+    - Tell me more about [handling text]{"entity": "NLTK_handling_text"}.
+    - Show me the command list on [handling text]{"entity": "NLTK_handling_text"}.
+    - I want to see the code for [handling text]{"entity": "NLTK_handling_text"}.    
+#    - How many default useful command for [handling text]{"entity": "NLTK_handling_text"} in NLTK?
+
+
+- intent: ask_NLTK_accessing_corpora_and_lexical_resources
+  examples: |
+    - [accessing corpora and lexical resources]{"entity": "NLTK_accessing_corpora_and_lexical_resources"}
+    - What is the command list for [accessing corpora and lexical resources]{"entity": "NLTK_accessing_corpora_and_lexical_resources"}?
+    - What should I type in if I am going to [accessing corpora and lexical resources]{"entity": "NLTK_accessing_corpora_and_lexical_resources"} words?
+    - Command line for [accessing corpora and lexical resources]{"entity": "NLTK_accessing_corpora_and_lexical_resources"}.
+    - what do I do when [accessing corpora and lexical resources]{"entity": "NLTK_accessing_corpora_and_lexical_resources"}.
+    - Tell me more about [accessing corpora and lexical resources]{"entity": "NLTK_accessing_corpora_and_lexical_resources"}.
+    - How many default useful command for [accessing corpora and lexical resources]{"entity": "NLTK_accessing_corpora_and_lexical_resources"} in NLTK?
+    - Show me the command list on [accessing corpora and lexical resources]{"entity": "NLTK_accessing_corpora_and_lexical_resources"}.
+    - what commands can I run when I [access corpora and lexical resources]{"entity": "NLTK_accessing_corpora_and_lexical_resources"}?
+#    - I want to see the code for [accessing corpora and lexical resources]{"entity": "NLTK_accessing_corpora_and_lexical_resources"}.
+
+- intent: ask_NLTK_tokenization
+  examples: |
+    - [tokenization]{"entity": "NLTK_tokenization"}
+    - What is the command list for [tokenization]{"entity": "NLTK_tokenization"}?
+    - I want to see the code for [tokenization]{"entity": "NLTK_tokenization"}.
+    - What should I type in if I am going to [tokenization]{"entity": "NLTK_tokenization"} words?
+    - Command line for [tokenization]{"entity": "NLTK_tokenization"}.
+    - what do I do when [tokenizing words]{"entity": "NLTK_tokenization"}.
+    - How many default useful command for [tokenization]{"entity": "NLTK_tokenization"} in NLTK? 
+    - what commands can I run when I do [tokenization]{"entity": "NLTK_tokenization"}? 
+    - Tell me more about [tokenization]{"entity": "NLTK_tokenization"}.
+#    - Show me the command list on [tokenization]{"entity": "NLTK_tokenization"}.    
+
+- intent: ask_NLTK_lemmatization_and_stemming
+  examples: |
+    - [lemmatization and stemming]{"entity": "NLTK_lemmatization_and_stemming"}
+    - Show me the command list on [lemmatization and stemming]{"entity": "NLTK_lemmatization_and_stemming"}.
+    - What is the command list for [lemmatization and stemming]{"entity": "NLTK_lemmatization_and_stemming"}?
+    - I want to see the code for [lemmatization and stemming]{"entity": "NLTK_lemmatization_and_stemming"}.
+    - What should I type in if I am going to [lemmatization and stemming]{"entity": "NLTK_lemmatization_and_stemming"} words?
+    - Command line for [lemmatization and stemming]{"entity": "NLTK_lemmatization_and_stemming"}.
+    - what do I do when [lemmatize and stem words]{"entity": "NLTK_lemmatization_and_stemming"}.
+    - Tell me more about [lemmatization and stemming]{"entity": "NLTK_lemmatization_and_stemming"}.
+    - How many default useful command for [lemmatization and stemming]{"entity": "NLTK_lemmatization_and_stemming"} in NLTK?
+#    - what commands can I run when I do [lemmatization and stemming]{"entity": "NLTK_lemmatization_and_stemming"}?
+
+- intent: ask_NLTK_part_of_speech_tagging
+  examples: |
+    - [part of speech tagging]{"entity": "NLTK_part_of_speech_tagging"}
+    - Show me the command list on [part of speech tagging]{"entity": "NLTK_part_of_speech_tagging"}.
+    - What is the command list for [part of speech tagging]{"entity": "NLTK_part_of_speech_tagging"}?
+    - I want to see the code for [part of speech tagging]{"entity": "NLTK_part_of_speech_tagging"}.
+    - What should I type in if I am going to [part of speech tagging]{"entity": "NLTK_part_of_speech_tagging"} words?
+    - Command line for [part of speech tagging]{"entity": "NLTK_part_of_speech_tagging"}.
+    - what commands can I run when I do [part of speech tagging]{"entity": "NLTK_part_of_speech_tagging"}?
+    - what do I do when do [part of speech tagging]{"entity": "NLTK_part_of_speech_tagging"}.
+    - How many default useful command for [part of speech tagging]{"entity": "NLTK_part_of_speech_tagging"} in NLTK?
+#    - Tell me more about [part of speech tagging]{"entity": "NLTK_part_of_speech_tagging"}.    
+
+- intent: ask_NLTK_sentence_parsing
+  examples: |
+    - [sentence parsing]{"entity": "NLTK_sentence_parsing"}
+    - Show me the command list on [sentence parsing]{"entity": "NLTK_sentence_parsing"}.
+    - What is the command list for [sentence parsing]{"entity": "NLTK_sentence_parsing"}?
+    - I want to see the code for [sentence parsing]{"entity": "NLTK_sentence_parsing"}.
+    - What should I type in if I am going to [sentence parsing]{"entity": "NLTK_sentence_parsing"} words?
+    - Command line for [sentence parsing]{"entity": "NLTK_sentence_parsing"}.
+    - what commands can I run when I do [sentence parsing]{"entity": "NLTK_sentence_parsing"}?
+    - what do I do when do [sentence parsing]{"entity": "NLTK_sentence_parsing"}.
+    - Tell me more about [sentence parsing]{"entity": "NLTK_sentence_parsing"}.
+#    - How many default useful command for [sentence parsing]{"entity": "NLTK_sentence_parsing"} in NLTK?
+
+- intent: ask_NLTK_text_classification
+  examples: |
+    - [text classification]{"entity": "NLTK_text_classification"}
+    - Show me the command list on [text classification]{"entity": "NLTK_text_classification"}.
+    - What is the command list for [text classification]{"entity": "NLTK_text_classification"}?
+    - I want to see the code for [text classification]{"entity": "NLTK_text_classification"}.
+    - What should I type in if I am going to [text classification]{"entity": "NLTK_text_classification"} words?
+    - Command line for [text classification]{"entity": "NLTK_text_classification"}.
+    - what commands can I run when I do [text classification]{"entity": "NLTK_text_classification"}?
+    - Tell me more about [text classification]{"entity": "NLTK_text_classification"}.
+    - How many default useful command for [text classification]{"entity": "NLTK_text_classification"} in NLTK?
+#    - what do I do when do [text classification]{"entity": "NLTK_text_classification"}.    
+
+- intent: ask_NLTK_entity_recognition
+  examples: |
+    - [entity recognition]{"entity": "NLTK_entity_recognition"}
+    - Show me the command list on [entity recognition]{"entity": "NLTK_entity_recognition"}.
+    - I want to see the code for [entity recognition]{"entity": "NLTK_entity_recognition"}.
+    - What should I type in if I am going to do [entity recognition]{"entity": "NLTK_entity_recognition"} words?
+    - Command line for [entity recognition]{"entity": "NLTK_entity_recognition"}.
+    - what commands can I run when I do [entity recognition]{"entity": "NLTK_entity_recognition"}?
+    - what do I do when do [entity recognition]{"entity": "NLTK_entity_recognition"}.
+    - Tell me more about [entity recognition]{"entity": "NLTK_entity_recognition"}.
+    - How many default useful command for [entity recognition]{"entity": "NLTK_entity_recognition"} in NLTK?
+#    - What is the command list for [entity recognition]{"entity": "NLTK_entity_recognition"}?    
+
+- intent: ask_Numpy_creating_arrays
+  examples: |
+    - Show me the command list on [creating arrays]{"entity": "Numpy_creating_arrays"}.
+    - What is the command list for [creating arrays]{"entity": "Numpy_creating_arrays"}?
+    - I want to see the code for [creating arrays]{"entity": "Numpy_creating_arrays"}.
+    - What should I type in if I am going to [create arrays]{"entity": "Numpy_creating_arrays"} words?
+    - Command line for [creating arrays]{"entity": "Numpy_creating_arrays"}.
+    - what commands can I run when I [create arrays]{"entity": "Numpy_creating_arrays"}?
+    - what do I do when do [creating arrays]{"entity": "Numpy_creating_arrays"}.
+    - Tell me more about [creating arrays]{"entity": "Numpy_creating_arrays"}.
+    - How many default useful command for [creating arrays]{"entity": "Numpy_creating_arrays"} in Numpy?
+#    - [creating arrays]{"entity": "Numpy_creating_arrays"}    
+
+- intent: ask_Numpy_inspecting_your_array
+  examples: |
+    - [inspecting your array]{"entity": "Numpy_inspecting_your_array"}
+    - Show me the command list on [inspecting your array]{"entity": "Numpy_inspecting_your_array"}.
+    - What is the command list for [inspecting your array]{"entity": "Numpy_inspecting_your_array"}?
+    - I want to see the code for [inspecting your array]{"entity": "Numpy_inspecting_your_array"}.
+    - What should I type in if I am going to [inspect my array]{"entity": "Numpy_inspecting_your_array"} words?
+    - Command line for [inspecting your array]{"entity": "Numpy_inspecting_your_array"}.
+    - what commands can I run when I [inspecting your array]{"entity": "Numpy_inspecting_your_array"}?
+    - what do I do when [inspecting my array]{"entity": "Numpy_inspecting_your_array"}.
+    - How many default useful command for [inspecting your array]{"entity": "Numpy_inspecting_your_array"} in Numpy?
+#    - Tell me more about [inspecting my array]{"entity": "Numpy_inspecting_your_array"}.    
+
+- intent: ask_Numpy_arrary_mathematics
+  examples: |
+    - [array mathematics]{"entity": "Numpy_array_mathematics"}
+    - Show me the command list on [array mathematics]{"entity": "Numpy_array_mathematics"}.
+    - What is the command list for [array mathematics]{"entity": "Numpy_array_mathematics"}?
+    - What should I type in if I am going to do [array mathematics]{"entity": "Numpy_array_mathematics"} words?
+    - Command line for [array mathematics]{"entity": "Numpy_array_mathematics"}.
+    - what commands can I run when I do [array mathematics]{"entity": "Numpy_array_mathematics"}?
+    - what do I do when do [array mathematics]{"entity": "Numpy_array_mathematics"}.
+    - Tell me more about [array mathematics]{"entity": "Numpy_array_mathematics"}.
+    - How many default useful command for [array mathematics]{"entity": "Numpy_array_mathematics"} in Numpy?
+#    - I want to see the code for [array mathematics]{"entity": "Numpy_array_mathematics"}.    
+
+- intent: ask_Numpy_arrary_manipulation
+  examples: |
+    - [array manipulation]{"entity": "Numpy_array_manipulation"}
+    - What is the command list for [array manipulation]{"entity": "Numpy_array_manipulation"}?
+    - I want to see the code for [array manipulation]{"entity": "Numpy_array_manipulation"}.
+    - What should I type in if I am going to do [array manipulation]{"entity": "Numpy_array_manipulation"} words?
+    - Command line for [array manipulation]{"entity": "Numpy_array_manipulation"}.
+    - what commands can I run when I do [array manipulation]{"entity": "Numpy_array_manipulation"}?
+    - what do I do when do [array manipulation]{"entity": "Numpy_array_manipulation"}.
+    - Tell me more about [array manipulation]{"entity": "Numpy_array_manipulation"}.
+    - How many default useful command for [array manipulation]{"entity": "Numpy_array_manipulation"} in Numpy?
+#    - Show me the command list on [array manipulation]{"entity": "Numpy_array_manipulation"}.    

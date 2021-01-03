@@ -1,0 +1,177 @@
+version: "2.0"
+stories:
+- story: ask make a copy sad path 1 (C:\Users\XinYa\AppData\Local\Temp\tmpcyljn6ug\ce130b1cec044d7c906316aca83dd0fb_test_stories.yml)
+  steps:
+  - intent: ask_make_a_copy  # predicted: ask_make_a_copy: I'd like to know the meaning of 'make a copy'.
+    entities:
+    - make a copy: "'make a copy'"
+  - action: utter_ask_make_a_copy
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+- story: ask make a copy sad path 2 (C:\Users\XinYa\AppData\Local\Temp\tmpcyljn6ug\ce130b1cec044d7c906316aca83dd0fb_test_stories.yml)
+  steps:
+  - intent: ask_make_a_copy  # predicted: ask_make_a_copy: Explain 'make a copy' to me.
+    entities:
+    - make a copy: "'make a copy'"
+  - action: utter_ask_make_a_copy
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+- story: ask save as path (C:\Users\XinYa\AppData\Local\Temp\tmpcyljn6ug\ce130b1cec044d7c906316aca83dd0fb_test_stories.yml)
+  steps:
+  - intent: ask_save_as  # predicted: ask_save_as: what can I do withsave [as](download as)?
+    entities:
+    - save as: save as
+  - action: utter_ask_save_as
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+- story: happy path 1 (C:\Users\XinYa\AppData\Local\Temp\tmpcyljn6ug\ce130b1cec044d7c906316aca83dd0fb_test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: action_listen  # predicted: utter_bot_info
+  - intent: mood_great  # predicted: ask_NLTK_tokenization: [amazing](NLTK_tokenization)
+  - action: utter_happy
+- story: ask save as sad path 1 (C:\Users\XinYa\AppData\Local\Temp\tmpcyljn6ug\ce130b1cec044d7c906316aca83dd0fb_test_stories.yml)
+  steps:
+  - intent: ask_save_as  # predicted: ask_save_as: what will [happen](open) when I [press](NLTK_accessing_corpora_and_lexical_resources) save [as](download as)?
+    entities:
+    - save as: save as
+  - action: utter_ask_save_as
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+- story: ask save as sad path 2 (C:\Users\XinYa\AppData\Local\Temp\tmpcyljn6ug\ce130b1cec044d7c906316aca83dd0fb_test_stories.yml)
+  steps:
+  - intent: ask_save_as  # predicted: ask_save_as: show me the meaning of save as.
+    entities:
+    - save as: save as
+  - action: utter_ask_save_as
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+- story: ask rename path (C:\Users\XinYa\AppData\Local\Temp\tmpcyljn6ug\ce130b1cec044d7c906316aca83dd0fb_test_stories.yml)
+  steps:
+  - intent: ask_rename  # predicted: ask_rename: [press](NLTK_accessing_corpora_and_lexical_resources) [rename](rename)
+    entities:
+    - rename: rename
+  - action: utter_ask_rename
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+- story: ask rename sad path 1 (C:\Users\XinYa\AppData\Local\Temp\tmpcyljn6ug\ce130b1cec044d7c906316aca83dd0fb_test_stories.yml)
+  steps:
+  - intent: ask_rename  # predicted: ask_rename: show me the meaning of rename
+    entities:
+    - rename: rename
+  - action: utter_ask_rename
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+- story: ask rename sad path 2 (C:\Users\XinYa\AppData\Local\Temp\tmpcyljn6ug\ce130b1cec044d7c906316aca83dd0fb_test_stories.yml)
+  steps:
+  - intent: ask_rename  # predicted: ask_rename: how can I use with rename button?
+    entities:
+    - rename: rename
+  - action: utter_ask_rename
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+- story: ask save and checkpoint path (C:\Users\XinYa\AppData\Local\Temp\tmpcyljn6ug\ce130b1cec044d7c906316aca83dd0fb_test_stories.yml)
+  steps:
+  - intent: ask_save_and_checkpoint  # predicted: ask_save_and_checkpoint: when I choose [save and checkpoint](save as)
+    entities:
+    - save and checkpoint: save and checkpoint
+  - action: utter_ask_save_and_checkpoint
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+- story: ask save and checkpoint sad path 1 (C:\Users\XinYa\AppData\Local\Temp\tmpcyljn6ug\ce130b1cec044d7c906316aca83dd0fb_test_stories.yml)
+  steps:
+  - intent: ask_save_and_checkpoint  # predicted: ask_save_and_checkpoint: what's for save and checkpoint?
+    entities:
+    - save and checkpoint: save and checkpoint
+  - action: utter_ask_save_and_checkpoint
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+- story: ask save and checkpoint sad path 2 (C:\Users\XinYa\AppData\Local\Temp\tmpcyljn6ug\ce130b1cec044d7c906316aca83dd0fb_test_stories.yml)
+  steps:
+  - intent: ask_save_and_checkpoint  # predicted: ask_save_and_checkpoint: function of save and checkpoint
+    entities:
+    - save and checkpoint: save and checkpoint
+  - action: utter_ask_save_and_checkpoint
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+- story: ask revert to checkpoint path (C:\Users\XinYa\AppData\Local\Temp\tmpcyljn6ug\ce130b1cec044d7c906316aca83dd0fb_test_stories.yml)
+  steps:
+  - intent: ask_revert_to_checkpoint  # predicted: ask_revert_to_checkpoint: tell me about revert to checkpoint
+    entities:
+    - revert to checkpoint: revert to checkpoint
+  - action: utter_ask_revert_to_checkpoint
+  - action: utter_does_it_help
+  - intent: affirm
+  - action: utter_affirm
+- story: ask revert to checkpoint sad path 1 (C:\Users\XinYa\AppData\Local\Temp\tmpcyljn6ug\ce130b1cec044d7c906316aca83dd0fb_test_stories.yml)
+  steps:
+  - intent: ask_revert_to_checkpoint  # predicted: ask_revert_to_checkpoint: what will [happen](open) if I choose revert to checkpoint?
+    entities:
+    - revert to checkpoint: revert to checkpoint
+  - action: utter_ask_revert_to_checkpoint
+  - action: utter_does_it_help
+  - intent: deny
+  - action: utter_deny
+- story: happy path 2 (C:\Users\XinYa\AppData\Local\Temp\tmpcyljn6ug\ce130b1cec044d7c906316aca83dd0fb_test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: action_listen  # predicted: utter_bot_info
+  - intent: mood_great  # predicted: ask_NLTK_tokenization: [amazing](NLTK_tokenization)
+  - action: utter_happy
+  - intent: goodbye
+  - action: utter_goodbye
+- story: ask revert to checkpoint sad path 2 (C:\Users\XinYa\AppData\Local\Temp\tmpcyljn6ug\ce130b1cec044d7c906316aca83dd0fb_test_stories.yml)
+  steps:
+  - intent: ask_revert_to_checkpoint  # predicted: ask_revert_to_checkpoint: meaning for revert to checkpoint
+    entities:
+    - revert to checkpoint: revert to checkpoint
+  - action: utter_ask_revert_to_checkpoint
+  - action: utter_does_it_help
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+- story: sad path 1 (C:\Users\XinYa\AppData\Local\Temp\tmpcyljn6ug\ce130b1cec044d7c906316aca83dd0fb_test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: action_listen  # predicted: utter_bot_info
+  - intent: mood_unhappy  # predicted: goodbye: not good
+  - action: utter_cheer_up
+  - action: utter_did_that_help  # predicted: utter_does_it_help
+  - action: action_listen  # predicted: utter_more_code
+  - intent: affirm
+  - action: utter_happy
+- story: sad path 2 (C:\Users\XinYa\AppData\Local\Temp\tmpcyljn6ug\ce130b1cec044d7c906316aca83dd0fb_test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: action_listen  # predicted: utter_bot_info
+  - intent: mood_unhappy  # predicted: goodbye: not good
+  - action: utter_cheer_up
+  - action: utter_did_that_help  # predicted: utter_does_it_help
+  - action: action_listen  # predicted: utter_more_code
+  - intent: deny
+  - action: utter_goodbye
+- story: sad path 3 (C:\Users\XinYa\AppData\Local\Temp\tmpcyljn6ug\ce130b1cec044d7c906316aca83dd0fb_test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: action_listen  # predicted: utter_bot_info
+  - intent: mood_unhappy  # predicted: nlu_fallback: [very terrible](find_and_replace)
+  - action: utter_cheer_up
+  - action: utter_did_that_help  # predicted: utter_does_it_help
+  - action: action_listen  # predicted: utter_more_code
+  - intent: deny
+  - action: utter_goodbye

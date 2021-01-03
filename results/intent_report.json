@@ -1,0 +1,383 @@
+{
+  "ask_new_notebook": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 7,
+    "confused_with": {}
+  },
+  "ask_revert_to_checkpoint": {
+    "precision": 0.8333333333333334,
+    "recall": 1.0,
+    "f1-score": 0.9090909090909091,
+    "support": 10,
+    "confused_with": {}
+  },
+  "mood_unhappy": {
+    "precision": 0.6666666666666666,
+    "recall": 0.5714285714285714,
+    "f1-score": 0.6153846153846153,
+    "support": 14,
+    "confused_with": {
+      "affirm": 1,
+      "mood_great": 1
+    }
+  },
+  "ask_open": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 7,
+    "confused_with": {}
+  },
+  "ask_copy_cells": {
+    "precision": 0.875,
+    "recall": 1.0,
+    "f1-score": 0.9333333333333333,
+    "support": 7,
+    "confused_with": {}
+  },
+  "goodbye": {
+    "precision": 0.7142857142857143,
+    "recall": 0.45454545454545453,
+    "f1-score": 0.5555555555555556,
+    "support": 11,
+    "confused_with": {
+      "greet": 2,
+      "out_of_scope": 1
+    }
+  },
+  "out_of_scope": {
+    "precision": 0.7692307692307693,
+    "recall": 0.5882352941176471,
+    "f1-score": 0.6666666666666667,
+    "support": 17,
+    "confused_with": {
+      "greet": 2,
+      "goodbye": 1
+    }
+  },
+  "greet": {
+    "precision": 0.5882352941176471,
+    "recall": 0.7692307692307693,
+    "f1-score": 0.6666666666666667,
+    "support": 13,
+    "confused_with": {
+      "goodbye": 1,
+      "deny": 1
+    }
+  },
+  "ask_close_and_halt": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 10,
+    "confused_with": {}
+  },
+  "ask_merge_cell_above": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 7,
+    "confused_with": {}
+  },
+  "ask_NLTK_handling_text": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 9,
+    "confused_with": {}
+  },
+  "ask_Numpy_arrary_mathematics": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 9,
+    "confused_with": {}
+  },
+  "ask_split_cells": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 7,
+    "confused_with": {}
+  },
+  "ask_NLTK_tokenization": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 9,
+    "confused_with": {}
+  },
+  "ask_Jupyter": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 18,
+    "confused_with": {}
+  },
+  "ask_print_preview": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 10,
+    "confused_with": {}
+  },
+  "ask_NLTK_text_classification": {
+    "precision": 0.8181818181818182,
+    "recall": 1.0,
+    "f1-score": 0.9,
+    "support": 9,
+    "confused_with": {}
+  },
+  "mood_great": {
+    "precision": 0.8,
+    "recall": 0.5714285714285714,
+    "f1-score": 0.6666666666666666,
+    "support": 14,
+    "confused_with": {
+      "mood_unhappy": 3,
+      "affirm": 1
+    }
+  },
+  "ask_move_cell_up": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 8,
+    "confused_with": {}
+  },
+  "ask_edit_notebook_metadata": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 8,
+    "confused_with": {}
+  },
+  "ask_Numpy_creating_arrays": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 9,
+    "confused_with": {}
+  },
+  "ask_rename": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 10,
+    "confused_with": {}
+  },
+  "ask_save_and_checkpoint": {
+    "precision": 0.8333333333333334,
+    "recall": 1.0,
+    "f1-score": 0.9090909090909091,
+    "support": 10,
+    "confused_with": {}
+  },
+  "ask_cut_cell_attachment": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 8,
+    "confused_with": {}
+  },
+  "ask_undo_delete_cells": {
+    "precision": 0.875,
+    "recall": 1.0,
+    "f1-score": 0.9333333333333333,
+    "support": 7,
+    "confused_with": {}
+  },
+  "ask_insert_image": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 8,
+    "confused_with": {}
+  },
+  "ask_paste_cells_below": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 7,
+    "confused_with": {}
+  },
+  "affirm": {
+    "precision": 0.2,
+    "recall": 0.16666666666666666,
+    "f1-score": 0.1818181818181818,
+    "support": 6,
+    "confused_with": {
+      "out_of_scope": 1,
+      "deny": 1,
+      "ask_NLTK_sentence_parsing": 1
+    }
+  },
+  "ask_NLTK": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 9,
+    "confused_with": {}
+  },
+  "ask_Numpy": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 9,
+    "confused_with": {}
+  },
+  "ask_find_and_replace": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 8,
+    "confused_with": {}
+  },
+  "ask_download_as": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 10,
+    "confused_with": {}
+  },
+  "deny": {
+    "precision": 0.42857142857142855,
+    "recall": 0.42857142857142855,
+    "f1-score": 0.42857142857142855,
+    "support": 7,
+    "confused_with": {
+      "out_of_scope": 1,
+      "mood_unhappy": 1
+    }
+  },
+  "ask_paste_cells_and_replace": {
+    "precision": 1.0,
+    "recall": 0.5714285714285714,
+    "f1-score": 0.7272727272727273,
+    "support": 7,
+    "confused_with": {
+      "ask_NLTK_text_classification": 2,
+      "ask_paste_cells_above": 1
+    }
+  },
+  "ask_cut_cells": {
+    "precision": 0.875,
+    "recall": 1.0,
+    "f1-score": 0.9333333333333333,
+    "support": 7,
+    "confused_with": {}
+  },
+  "ask_delete_cells": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 7,
+    "confused_with": {}
+  },
+  "ask_NLTK_lemmatization_and_stemming": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 9,
+    "confused_with": {}
+  },
+  "ask_paste_cells_above": {
+    "precision": 0.875,
+    "recall": 1.0,
+    "f1-score": 0.9333333333333333,
+    "support": 7,
+    "confused_with": {}
+  },
+  "ask_paste_cell_attachment": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 8,
+    "confused_with": {}
+  },
+  "ask_move_cell_down": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 8,
+    "confused_with": {}
+  },
+  "ask_make_a_copy": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 7,
+    "confused_with": {}
+  },
+  "ask_Numpy_inspecting_your_array": {
+    "precision": 0.9,
+    "recall": 1.0,
+    "f1-score": 0.9473684210526316,
+    "support": 9,
+    "confused_with": {}
+  },
+  "ask_NLTK_entity_recognition": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 9,
+    "confused_with": {}
+  },
+  "ask_save_as": {
+    "precision": 0.9,
+    "recall": 1.0,
+    "f1-score": 0.9473684210526316,
+    "support": 9,
+    "confused_with": {}
+  },
+  "ask_NLTK_accessing_corpora_and_lexical_resources": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 9,
+    "confused_with": {}
+  },
+  "ask_NLTK_part_of_speech_tagging": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 9,
+    "confused_with": {}
+  },
+  "ask_copy_cell_attachment": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 8,
+    "confused_with": {}
+  },
+  "ask_Numpy_arrary_manipulation": {
+    "precision": 0.9,
+    "recall": 1.0,
+    "f1-score": 0.9473684210526316,
+    "support": 9,
+    "confused_with": {}
+  },
+  "ask_NLTK_sentence_parsing": {
+    "precision": 0.9,
+    "recall": 1.0,
+    "f1-score": 0.9473684210526316,
+    "support": 9,
+    "confused_with": {}
+  },
+  "accuracy": 0.909706546275395,
+  "macro avg": {
+    "precision": 0.9133028236269533,
+    "recall": 0.920847659743218,
+    "f1-score": 0.9132569662107793,
+    "support": 443
+  },
+  "weighted avg": {
+    "precision": 0.9080017181066179,
+    "recall": 0.909706546275395,
+    "f1-score": 0.9046547673017912,
+    "support": 443
+  }
+}

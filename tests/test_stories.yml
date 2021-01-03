@@ -1,0 +1,1607 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+- story: happy path 1
+  steps:
+  - user: |
+      hello there!
+    intent: greet
+  - action: utter_greet
+  - user: |
+      amazing
+    intent: mood_great
+  - action: utter_happy
+
+- story: happy path 2
+  steps:
+  - user: |
+      hello there!
+    intent: greet
+  - action: utter_greet
+  - user: |
+      amazing
+    intent: mood_great
+  - action: utter_happy
+  - user: |
+      bye-bye!
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: sad path 1
+  steps:
+  - user: |
+      hello
+    intent: greet
+  - action: utter_greet
+  - user: |
+      not good
+    intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - user: |
+      yes
+    intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - user: |
+      hello
+    intent: greet
+  - action: utter_greet
+  - user: |
+      not good
+    intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - user: |
+      not really
+    intent: deny
+  - action: utter_goodbye
+
+- story: sad path 3
+  steps:
+  - user: |
+      hi
+    intent: greet
+  - action: utter_greet
+  - user: |
+      very terrible
+    intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - user: |
+      no
+    intent: deny
+  - action: utter_goodbye
+
+- story: say goodbye
+  steps:
+  - user: |
+      bye-bye!
+    intent: goodbye
+  - action: utter_goodbye
+
+- story: bot challenge
+  steps:
+  - user: |
+      are you a bot?
+    intent: bot_challenge
+  - action: utter_iamabot
+
+- story: exchange greet
+  steps:
+  - user: |
+      hello
+    intent: greet
+  - action: utter_greet
+  - action: utter_bot_info
+
+- story: ask Jupyter notebook
+  steps:
+  - user: |
+      Could you tell you the function of [Jupyter notebook]{"entity": "Jupyter"}?
+    intent: ask_Jupyter
+  - action: utter_Jupyter_info
+  - action: utter_ask_Jupyter
+
+- story: ask new notebook happy path
+  steps:
+  - user: |
+      What can I do with [new notebook]{"entity": "new notebook"}?
+    intent: ask_new_notebook
+  - action: utter_ask_new_notebook
+  - action: utter_does_it_help
+  - user: |
+      of course
+    intent: affirm
+  - action: utter_affirm
+
+- story: ask new notebook sad path 1
+  steps:
+  - user: |
+      I need help on how to use [new notebook]{"entity": "new notebook"}.
+    intent: ask_new_notebook
+  - action: utter_ask_new_notebook
+  - action: utter_does_it_help
+  - user: |
+      I don't think so.
+    intent: deny
+  - action: utter_deny
+
+- story: ask new notebook sad path 2
+  steps:
+  - user: |
+      Tell me something about [new notebook]{"entity": "new notebook"}.
+    intent: ask_new_notebook
+  - action: utter_ask_new_notebook
+  - action: utter_does_it_help
+  - user: |
+      nevermind
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask open happy path
+  steps:
+  - user: |
+      Can you show me the functions of [open]{"entity": "open"}?
+    intent: ask_open
+  - action: utter_ask_open
+  - action: utter_does_it_help
+  - user: |
+      of course
+    intent: affirm
+  - action: utter_affirm
+
+- story: ask open sad path 1
+  steps:
+  - user: |
+      I need a brief introduction of [open]{"entity": "open"}.
+    intent: ask_open
+  - action: utter_ask_open
+  - action: utter_does_it_help
+  - user: |
+      I don't think so.
+    intent: deny
+  - action: utter_deny
+
+- story: ask open sad path 2
+  steps:
+  - user: |
+      What can I do with [open]{"entity": "open"}?
+    intent: ask_open
+  - action: utter_ask_open
+  - action: utter_does_it_help
+  - user: |
+      nevermind
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask make a copy path
+  steps:
+  - user: |
+      [make a copy]{"entity": "make a copy"}
+    intent: ask_make_a_copy
+  - action: utter_ask_make_a_copy
+  - action: utter_does_it_help
+  - user: |
+      of course
+    intent: affirm
+  - action: utter_affirm
+
+- story: ask make a copy sad path 1
+  steps:
+  - user: |
+      I'd like to know the meaning of [make a copy]{"entity": "make a copy"}.
+    intent: ask_make_a_copy
+  - action: utter_ask_make_a_copy
+  - action: utter_does_it_help
+  - user: |
+      I don't think so.
+    intent: deny
+  - action: utter_deny
+
+- story: ask make a copy sad path 2
+  steps:
+  - user: |
+      Explain [make a copy]{"entity": "make a copy"} to me.
+    intent: ask_make_a_copy
+  - action: utter_ask_make_a_copy
+  - action: utter_does_it_help
+  - user: |
+      nevermind
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask save as path
+  steps:
+  - user: |
+      what can I do with [save as]{"entity": "save as"}?
+    intent: ask_save_as
+  - action: utter_ask_save_as
+  - action: utter_does_it_help
+  - user: |
+      of course
+    intent: affirm
+  - action: utter_affirm
+
+- story: ask save as sad path 1
+  steps:
+  - user: |
+      what will happen when I press [save as]{"entity": "save as"}?
+    intent: ask_save_as
+  - action: utter_ask_save_as
+  - action: utter_does_it_help
+  - user: |
+      I don't think so.
+    intent: deny
+  - action: utter_deny
+
+- story: ask save as sad path 2
+  steps:
+  - user: |
+      show me the meaning of [save as]{"entity": "save as"}.
+    intent: ask_save_as
+  - action: utter_ask_save_as
+  - action: utter_does_it_help
+  - user: |
+      nevermind
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask rename path
+  steps:
+  - user: |
+      press [rename]{"entity": "rename"}
+    intent: ask_rename
+  - action: utter_ask_rename
+  - action: utter_does_it_help
+  - user: |
+      of course
+    intent: affirm
+  - action: utter_affirm
+
+- story: ask rename sad path 1
+  steps:
+  - user: |
+      show me the meaning of [rename]{"entity": "rename"}
+    intent: ask_rename
+  - action: utter_ask_rename
+  - action: utter_does_it_help
+  - user: |
+      I don't think so.
+    intent: deny
+  - action: utter_deny
+
+- story: ask rename sad path 2
+  steps:
+  - user: |
+      how can I use with [rename]{"entity": "rename"} button?
+    intent: ask_rename
+  - action: utter_ask_rename
+  - action: utter_does_it_help
+  - user: |
+      nevermind
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask save and checkpoint path
+  steps:
+  - user: |
+      when I choose [save and checkpoint]{"entity": "save and checkpoint"}
+    intent: ask_save_and_checkpoint
+  - action: utter_ask_save_and_checkpoint
+  - action: utter_does_it_help
+  - user: |
+      of course
+    intent: affirm
+  - action: utter_affirm
+
+- story: ask save and checkpoint sad path 1
+  steps:
+  - user: |
+      what's for [save and checkpoint]{"entity": "save and checkpoint"}?
+    intent: ask_save_and_checkpoint
+  - action: utter_ask_save_and_checkpoint
+  - action: utter_does_it_help
+  - user: |
+      I don't think so.
+    intent: deny
+  - action: utter_deny
+
+- story: ask save and checkpoint sad path 2
+  steps:
+  - user: |
+      function of [save and checkpoint]{"entity": "save and checkpoint"}
+    intent: ask_save_and_checkpoint
+  - action: utter_ask_save_and_checkpoint
+  - action: utter_does_it_help
+  - user: |
+      nevermind
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask revert to checkpoint path
+  steps:
+  - user: |
+      tell me about [revert to checkpoint]{"entity": "revert to checkpoint"}
+    intent: ask_revert_to_checkpoint
+  - action: utter_ask_revert_to_checkpoint
+  - action: utter_does_it_help
+  - user: |
+      of course
+    intent: affirm
+  - action: utter_affirm
+
+- story: ask revert to checkpoint sad path 1
+  steps:
+  - user: |
+      what will happen if I choose [revert to checkpoint]{"entity": "revert to checkpoint"}?
+    intent: ask_revert_to_checkpoint
+  - action: utter_ask_revert_to_checkpoint
+  - action: utter_does_it_help
+  - user: |
+      I don't think so.
+    intent: deny
+  - action: utter_deny
+
+- story: ask revert to checkpoint sad path 2
+  steps:
+  - user: |
+      meaning for [revert to checkpoint]{"entity": "revert to checkpoint"}
+    intent: ask_revert_to_checkpoint
+  - action: utter_ask_revert_to_checkpoint
+  - action: utter_does_it_help
+  - user: |
+      nevermind
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask print preview path
+  steps:
+  - user: |
+      meaning for [print preview]{"entity": "print preview"}
+    intent: ask_print_preview
+  - action: utter_ask_print_preview
+  - action: utter_does_it_help
+  - user: |
+      of course
+    intent: affirm
+  - action: utter_affirm
+
+- story: ask print preview sad path 1
+  steps:
+  - user: |
+      show me the meaning of [print preview]{"entity": "print preview"}
+    intent: ask_print_preview
+  - action: utter_ask_print_preview
+  - action: utter_does_it_help
+  - user: |
+      I don't think so.
+    intent: deny
+  - action: utter_deny
+
+- story: ask print preview sad path 2
+  steps:
+  - user: |
+      information about [print preview]{"entity": "print preview"}
+    intent: ask_print_preview
+  - action: utter_ask_print_preview
+  - action: utter_does_it_help
+  - user: |
+      nevermind
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask download as path
+  steps:
+  - user: |
+      when I press [download as]{"entity": "download as"}
+    intent: ask_download_as
+  - action: utter_ask_download_as
+  - action: utter_does_it_help
+  - user: |
+      of course
+    intent: affirm
+  - action: utter_affirm
+
+- story: ask download as sad path 1
+  steps:
+  - user: |
+      meaning for [download as]{"entity": "download as"}
+    intent: ask_download_as
+  - action: utter_ask_download_as
+  - action: utter_does_it_help
+  - user: |
+      I don't think so.
+    intent: deny
+  - action: utter_deny
+
+- story: ask download as sad path 2
+  steps:
+  - user: |
+      tell me something about [download as]{"entity": "download as"}
+    intent: ask_download_as
+  - action: utter_ask_download_as
+  - action: utter_does_it_help
+  - user: |
+      nevermind
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask close and halt path
+  steps:
+  - user: |
+      what will happen when choose [close and halt]{"entity": "close and halt"}?
+    intent: ask_close_and_halt
+  - action: utter_close_and_halt
+  - action: utter_does_it_help
+  - user: |
+      of course
+    intent: affirm
+  - action: utter_affirm
+
+- story: ask close and halt sad path 1
+  steps:
+  - user: |
+      I'd like to know [close and halt]{"entity": "close and halt"}
+    intent: ask_close_and_halt
+  - action: utter_ask_close_and_halt
+  - action: utter_does_it_help
+  - user: |
+      I don't think so.
+    intent: deny
+  - action: utter_deny
+
+- story: ask close and halt sad path 2
+  steps:
+  - user: |
+      what do I do with [close and halt]{"entity": "close and halt"}?
+    intent: ask_close_and_halt
+  - action: utter_ask_close_and_halt
+  - action: utter_does_it_help
+  - user: |
+      nevermind
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask cut cells path
+  steps:
+  - user: |
+      explain [cut cells]{"entity": "cut cells"} to me.
+    intent: ask_cut_cells
+  - action: utter_cut_cells
+  - action: utter_does_it_help
+  - user: |
+      of course
+    intent: affirm
+  - action: utter_affirm
+
+- story: ask cut cells sad path 1
+  steps:
+  - user: |
+      tell me something about [cut cells]{"entity": "cut cells"}
+    intent: ask_cut_cells
+  - action: utter_ask_cut_cells
+  - action: utter_does_it_help
+  - user: |
+      I don't think so.
+    intent: deny
+  - action: utter_deny
+
+- story: ask cut cells sad path 2
+  steps:
+  - user: |
+      how does [cut cells]{"entity": "cut cells"} work?
+    intent: ask_cut_cells
+  - action: utter_ask_cut_cells
+  - action: utter_does_it_help
+  - user: |
+      nevermind
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask copy cells path
+  steps:
+  - user: |
+      I'd like to know the meaning of [copy cells]{"entity": "copy cells"}.
+    intent: ask_copy_cells
+  - action: utter_ask_copy_cells
+  - action: utter_does_it_help
+  - user: |
+      of course
+    intent: affirm
+  - action: utter_affirm
+
+- story: ask copy cells sad path 1
+  steps:
+  - user: |
+      How does [copy cells]{"entity": "copy cells"} work?
+    intent: ask_copy_cells
+  - action: utter_ask_copy_cells
+  - action: utter_does_it_help
+  - user: |
+      I don't think so.
+    intent: deny
+  - action: utter_deny
+
+- story: ask copy cells sad path 2
+  steps:
+  - user: |
+      Can you show me the functions of [copy cells]{"entity": "copy cells"}?
+    intent: ask_copy_cells
+  - action: utter_ask_copy_cells
+  - action: utter_does_it_help
+  - user: |
+      nevermind
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask paste cells above path
+  steps:
+  - user: |
+      [paste cells above]{"entity": "paste_cells_above"}
+    intent: ask_paste_cells_above
+  - action: utter_ask_paste_cells_above
+  - action: utter_does_it_help
+  - user: |
+      of course
+    intent: affirm
+  - action: utter_affirm
+
+- story: ask paste cells above sad path 1
+  steps:
+  - user: |
+      Tell me something about [paste cells above]{"entity": "paste_cells_above"}.
+    intent: ask_paste_cells_above
+  - action: utter_ask_paste_cells_above
+  - action: utter_does_it_help
+  - user: |
+      I don't think so.
+    intent: deny
+  - action: utter_deny
+
+- story: ask paste cells above sad path 2
+  steps:
+  - user: |
+      I need help on how to use [paste cells above]{"entity": "paste_cells_above"}.
+    intent: ask_paste_cells_above
+  - action: utter_ask_paste_cells_above
+  - action: utter_does_it_help
+  - user: |
+      nevermind
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask paste cells below path
+  steps:
+  - user: |
+      [paste cells below]{"entity": "paste_cells_below"}
+    intent: ask_paste_cells_below
+  - action: utter_ask_paste_cells_below
+  - action: utter_does_it_help
+  - user: |
+      of course
+    intent: affirm
+  - action: utter_affirm
+
+- story: ask paste cells below sad path 1
+  steps:
+  - user: |
+      Tell me something about [paste cells below]{"entity": "paste_cells_below"}.
+    intent: ask_paste_cells_below
+  - action: utter_ask_paste_cells_below
+  - action: utter_does_it_help
+  - user: |
+      I don't think so.
+    intent: deny
+  - action: utter_deny
+
+- story: ask paste cells below sad path 2
+  steps:
+  - user: |
+      Can you show me the functions of [paste cells below]{"entity": "paste_cells_below"}?
+    intent: ask_paste_cells_below
+  - action: utter_ask_paste_cells_below
+  - action: utter_does_it_help
+  - user: |
+      nevermind
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask paste cells and replace path
+  steps:
+  - user: |
+      I'd like to know the meaning of [paste cells and replace]{"entity": "paste_cells_and_replace"}.
+    intent: ask_paste_cells_and_replace
+  - action: utter_ask_paste_cells_and_replace
+  - action: utter_does_it_help
+  - user: |
+      of course
+    intent: affirm
+  - action: utter_affirm
+
+- story: ask paste cells and replace sad path 1
+  steps:
+  - user: |
+      How does [paste cells and replace]{"entity": "paste_cells_and_replace"} work?
+    intent: ask_paste_cells_and_replace
+  - action: utter_ask_paste_cells_and_replace
+  - action: utter_does_it_help
+  - user: |
+      I don't think so.
+    intent: deny
+  - action: utter_deny
+
+- story: ask paste cells and replace sad path 2
+  steps:
+  - user: |
+      I need a brief introduction of [paste cells and replace]{"entity": "paste_cells_and_replace"}.
+    intent: ask_paste_cells_and_replace
+  - action: utter_ask_paste_cells_and_replace
+  - action: utter_does_it_help
+  - user: |
+      nevermind
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask delete cells path
+  steps:
+  - user: |
+      [delete cells]{"entity": "delete_cells"}
+    intent: ask_delete_cells
+  - action: utter_ask_delete_cells
+  - action: utter_does_it_help
+  - user: |
+      of course
+    intent: affirm
+  - action: utter_affirm
+
+- story: ask delete cells sad path 1
+  steps:
+  - user: |
+      I'd like to know the function of [delete cells]{"entity": "delete_cells"}.
+    intent: ask_delete_cells
+  - action: utter_ask_delete_cells
+  - action: utter_does_it_help
+  - user: |
+      I don't think so.
+    intent: deny
+  - action: utter_deny
+
+- story: ask delete cells sad path 2
+  steps:
+  - user: |
+      Explain [delete cells]{"entity": "delete_cells"} to me.
+    intent: ask_delete_cells
+  - action: utter_ask_delete_cells
+  - action: utter_does_it_help
+  - user: |
+      nevermind
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask undo delete cells path
+  steps:
+  - user: |
+      [undo delete cells]{"entity": "undo_delete_cells"}
+    intent: ask_undo_delete_cells
+  - action: utter_ask_undo_delete_cells
+  - action: utter_does_it_help
+  - user: |
+      of course
+    intent: affirm
+  - action: utter_affirm
+
+- story: ask undo delete cells sad path 1
+  steps:
+  - user: |
+      How does [undo delete cells]{"entity": "undo_delete_cells"} work?
+    intent: ask_undo_delete_cells
+  - action: utter_ask_undo_delete_cells
+  - action: utter_does_it_help
+  - user: |
+      I don't think so.
+    intent: deny
+  - action: utter_deny
+
+- story: ask undo delete cells sad path 2
+  steps:
+  - user: |
+      Can you show me the functions of [undo delete cells]{"entity": "undo_delete_cells"}?
+    intent: ask_undo_delete_cells
+  - action: utter_ask_undo_delete_cells
+  - action: utter_does_it_help
+  - user: |
+      nevermind
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask split cells path
+  steps:
+  - user: |
+      I need a brief introduction of [split cells]{"entity": "split_cells"}.
+    intent: ask_split_cells
+  - action: utter_ask_split_cells
+  - action: utter_does_it_help
+  - user: |
+      of course
+    intent: affirm
+  - action: utter_affirm
+
+- story: ask split cells sad path 1
+  steps:
+  - user: |
+      What can I do with [split cells]{"entity": "split_cells"}?
+    intent: ask_split_cells
+  - action: utter_ask_split_cells
+  - action: utter_does_it_help
+  - user: |
+      I don't think so.
+    intent: deny
+  - action: utter_deny
+
+- story: ask split cells sad path 2
+  steps:
+  - user: |
+      I need help on how to use [split cells]{"entity": "split_cells"}.
+    intent: ask_split_cells
+  - action: utter_ask_split_cells
+  - action: utter_does_it_help
+  - user: |
+      nevermind
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask merge cell above path
+  steps:
+  - user: |
+      [merge cell above]{"entity": "merge_cell_above"}
+    intent: ask_merge_cell_above
+  - action: utter_ask_merge_cell_above
+  - action: utter_does_it_help
+  - user: |
+      of course
+    intent: affirm
+  - action: utter_affirm
+
+- story: ask merge cell above sad path 1
+  steps:
+  - user: |
+      Explain [merge cell above]{"entity": "merge_cell_above"} to me.
+    intent: ask_merge_cell_above
+  - action: utter_ask_merge_cell_above
+  - action: utter_does_it_help
+  - user: |
+      I don't think so.
+    intent: deny
+  - action: utter_deny
+
+- story: ask merge cell above sad path 2
+  steps:
+  - user: |
+      What can I do with [merge cell above]{"entity": "merge_cell_above"}?
+    intent: ask_merge_cell_above
+  - action: utter_ask_merge_cell_above
+  - action: utter_does_it_help
+  - user: |
+      nevermind
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask move cell up path
+  steps:
+  - user: |
+      how to [move cell up]{"entity": "move_cell_up"}?
+    intent: ask_move_cell_up
+  - action: utter_ask_move_cell_up
+  - action: utter_does_it_help
+  - user: |
+      of course
+    intent: affirm
+  - action: utter_affirm
+
+- story: ask move cell up sad path 1
+  steps:
+  - user: |
+      I'd like to know the meaning of [move cell up]{"entity": "move_cell_up"}.
+    intent: ask_move_cell_up
+  - action: utter_ask_move_cell_up
+  - action: utter_does_it_help
+  - user: |
+      I don't think so.
+    intent: deny
+  - action: utter_deny
+
+- story: ask move cell up sad path 2
+  steps:
+  - user: |
+      Can you show me the functions of [move cell up]{"entity": "move_cell_up"}?
+    intent: ask_move_cell_up
+  - action: utter_ask_move_cell_up
+  - action: utter_does_it_help
+  - user: |
+      nevermind
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask move cell down path
+  steps:
+  - user: |
+      Tell me something about [move cell down]{"entity": "move_cell_down"}.
+    intent: ask_move_cell_down
+  - action: utter_ask_move_cell_down
+  - action: utter_does_it_help
+  - user: |
+      of course
+    intent: affirm
+  - action: utter_affirm
+
+- story: ask move cell down sad path 1
+  steps:
+  - user: |
+      I need help on how to use [move cell down]{"entity": "move_cell_down"}.
+    intent: ask_move_cell_down
+  - action: utter_ask_move_cell_down
+  - action: utter_does_it_help
+  - user: |
+      I don't think so.
+    intent: deny
+  - action: utter_deny
+
+- story: ask move cell down sad path 2
+  steps:
+  - user: |
+      I need a brief introduction of [move cell down]{"entity": "move_cell_down"}.
+    intent: ask_move_cell_down
+  - action: utter_ask_move_cell_down
+  - action: utter_does_it_help
+  - user: |
+      nevermind
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask edit notebook metadata path
+  steps:
+  - user: |
+      what can I do with [edit notebook metadata]{"entity": "edit_notebook_metadata"}.
+    intent: ask_edit_notebook_metadata
+  - action: utter_ask_edit_notebook_metadata
+  - action: utter_does_it_help
+  - user: |
+      of course
+    intent: affirm
+  - action: utter_affirm
+
+- story: ask edit notebook metadata sad path 1
+  steps:
+  - user: |
+      I'd like to know the function of [edit notebook metadata]{"entity": "edit_notebook_metadata"}.
+    intent: ask_edit_notebook_metadata
+  - action: utter_ask_edit_notebook_metadata
+  - action: utter_does_it_help
+  - user: |
+      I don't think so.
+    intent: deny
+  - action: utter_deny
+
+- story: ask edit notebook metadata sad path 2
+  steps:
+  - user: |
+      Can you show me the functions of [edit notebook metadata]{"entity": "edit_notebook_metadata"}?
+    intent: ask_edit_notebook_metadata
+  - action: utter_ask_edit_notebook_metadata
+  - action: utter_does_it_help
+  - user: |
+      nevermind
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask find and replace path
+  steps:
+  - user: |
+      [find and replace]{"entity": "find_and_replace"}
+    intent: ask_find_and_replace
+  - action: utter_ask_find_and_replace
+  - action: utter_does_it_help
+  - user: |
+      of course
+    intent: affirm
+  - action: utter_affirm
+
+- story: ask find and replace sad path 1
+  steps:
+  - user: |
+      What can I do with [find and replace]{"entity": "find_and_replace"}?
+    intent: ask_find_and_replace
+  - action: utter_ask_find_and_replace
+  - action: utter_does_it_help
+  - user: |
+      I don't think so.
+    intent: deny
+  - action: utter_deny
+
+- story: ask find and replace sad path 2
+  steps:
+  - user: |
+      Can you show me the functions of [find and replace]{"entity": "find_and_replace"}?
+    intent: ask_find_and_replace
+  - action: utter_ask_find_and_replace
+  - action: utter_does_it_help
+  - user: |
+      nevermind
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask cut cell attachment path
+  steps:
+  - user: |
+      Explain [cut cell attachment]{"entity": "cut_cell_attachment"} to me.
+    intent: ask_cut_cell_attachment
+  - action: utter_ask_cut_cell_attachment
+  - action: utter_does_it_help
+  - user: |
+      of course
+    intent: affirm
+  - action: utter_affirm
+
+- story: ask cut cell attachment sad path 1
+  steps:
+  - user: |
+      How does [cut cell attachment]{"entity": "cut_cell_attachment"} work?
+    intent: ask_cut_cell_attachment
+  - action: utter_ask_cut_cell_attachment
+  - action: utter_does_it_help
+  - user: |
+      I don't think so.
+    intent: deny
+  - action: utter_deny
+
+- story: ask cut cell attachment sad path 2
+  steps:
+  - user: |
+      What can I do with [cut cell attachment]{"entity": "cut_cell_attachment"}?
+    intent: ask_cut_cell_attachment
+  - action: utter_ask_cut_cell_attachment
+  - action: utter_does_it_help
+  - user: |
+      nevermind
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask copy cell attachment path
+  steps:
+  - user: |
+      Can you show me the functions of [copy cell attachment]{"entity": "copy_cell_attachment"}?
+    intent: ask_copy_cell_attachment
+  - action: utter_ask_copy_cell_attachment
+  - action: utter_does_it_help
+  - user: |
+      of course
+    intent: affirm
+  - action: utter_affirm
+
+- story: ask copy cell attachment sad path 1
+  steps:
+  - user: |
+      I need a brief introduction of [copy cell attachment]{"entity": "copy_cell_attachment"}.
+    intent: ask_copy_cell_attachment
+  - action: utter_ask_copy_cell_attachment
+  - action: utter_does_it_help
+  - user: |
+      I don't think so.
+    intent: deny
+  - action: utter_deny
+
+- story: ask copy cell attachment sad path 2
+  steps:
+  - user: |
+      What can I do with [copy cell attachment]{"entity": "copy_cell_attachment"}?
+    intent: ask_copy_cell_attachment
+  - action: utter_ask_copy_cell_attachment
+  - action: utter_does_it_help
+  - user: |
+      nevermind
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask paste cell attachment path
+  steps:
+  - user: |
+      [paste cell attachment]{"entity": "paste_cell_attachment"}
+    intent: ask_paste_cell_attachment
+  - action: utter_ask_paste_cell_attachment
+  - action: utter_does_it_help
+  - user: |
+      of course
+    intent: affirm
+  - action: utter_affirm
+
+- story: ask paste cell attachment sad path 1
+  steps:
+  - user: |
+      what can I do with [paste cell attachment]{"entity": "paste_cell_attachment"}
+    intent: ask_paste_cell_attachment
+  - action: utter_ask_paste_cell_attachment
+  - action: utter_does_it_help
+  - user: |
+      I don't think so.
+    intent: deny
+  - action: utter_deny
+
+- story: ask paste cell attachment sad path 2
+  steps:
+  - user: |
+      Explain [paste cell attachment]{"entity": "paste_cell_attachment"} to me.
+    intent: ask_paste_cell_attachment
+  - action: utter_ask_paste_cell_attachment
+  - action: utter_does_it_help
+  - user: |
+      nevermind
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask insert image path
+  steps:
+  - user: |
+      tell me more about [insert image]{"entity": "insert_image"}
+    intent: ask_insert_image
+  - action: utter_ask_insert_image
+  - action: utter_does_it_help
+  - user: |
+      of course
+    intent: affirm
+  - action: utter_affirm
+
+- story: ask insert image sad path 1
+  steps:
+  - user: |
+      How does [insert image]{"entity": "insert_image"} work?
+    intent: ask_insert_image
+  - action: utter_ask_insert_image
+  - action: utter_does_it_help
+  - user: |
+      I don't think so.
+    intent: deny
+  - action: utter_deny
+
+- story: ask insert image sad path 2
+  steps:
+  - user: |
+      Can you show me the functions of [insert image]{"entity": "insert_image"}?
+    intent: ask_insert_image
+  - action: utter_ask_insert_image
+  - action: utter_does_it_help
+  - user: |
+      nevermind
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: ask handling text path
+  steps:
+  - user: |
+      How many default useful command for [handling text]{"entity": "NLTK_handling_text"} in NLTK?
+    intent: ask_NLTK_handling_text
+  - action: utter_ask_NLTK_handling_text
+  - action: utter_more_code
+
+- story: ask accessing corpora and lexical resources path
+  steps:
+  - user: |
+      I want to see the code for [accessing corpora and lexical resources]{"entity": "NLTK_accessing_corpora_and_lexical_resources"}.
+    intent: ask_NLTK_accessing_corpora_and_lexical_resources
+  - action: utter_ask_NLTK_accessing_corpora_and_lexical_resources
+  - action: utter_more_code
+
+- story: ask tokenization path
+  steps:
+  - user: |
+      Show me the command list on [tokenization]{"entity": "NLTK_tokenization"}.
+    intent: ask_NLTK_tokenization
+  - action: utter_ask_NLTK_tokenization
+  - action: utter_more_code
+
+- story: ask lemmatization and stemming path
+  steps:
+  - user: |
+      what commands can I run when I do [lemmatization and stemming]{"entity": "NLTK_lemmatization_and_stemming"}?
+    intent: ask_NLTK_lemmatization_and_stemming
+  - action: utter_ask_NLTK_lemmatization_and_stemming
+  - action: utter_more_code
+
+- story: ask part of speech tagging path
+  steps:
+  - user: |
+      Tell me more about [part of speech tagging]{"entity": "NLTK_part_of_speech_tagging"}.
+    intent: ask_NLTK_part_of_speech_tagging
+  - action: utter_ask_NLTK_part_of_speech_tagging
+  - action: utter_more_code
+
+- story: ask sentence parsing path
+  steps:
+  - user: |
+      How many default useful command for [sentence parsing]{"entity": "NLTK_sentence_parsing"} in NLTK?
+    intent: ask_NLTK_sentence_parsing
+  - action: utter_ask_NLTK_sentence_parsing
+  - action: utter_more_code
+
+- story: ask text classification path
+  steps:
+  - user: |
+      what do I do when do [text classification]{"entity": "NLTK_text_classification"}.
+    intent: ask_NLTK_text_classification
+  - action: utter_ask_NLTK_text_classification
+  - action: utter_more_code
+
+- story: ask entity recognition path
+  steps:
+  - user: |
+      What is the command list for [entity recognition]{"entity": "NLTK_entity_recognition"}?
+    intent: ask_NLTK_entity_recognition
+  - action: utter_ask_NLTK_entity_recognition
+  - action: utter_more_code
+
+- story: ask creating arrays path
+  steps:
+  - user: |
+      [creating arrays]{"entity": "Numpy_creating_arrays"}
+    intent: ask_Numpy_creating_arrays
+  - action: utter_ask_Numpy_creating_arrays
+  - action: utter_more_code
+
+- story: ask inspecting your array path
+  steps:
+  - user: |
+      Tell me more about [inspecting my array]{"entity": "Numpy_inspecting_your_array"}.
+    intent: ask_Numpy_inspecting_your_array
+  - action: utter_ask_Numpy_inspecting_your_array
+  - action: utter_more_code
+
+- story: ask array mathematics path
+  steps:
+  - user: |
+      I want to see the code for [array mathematics]{"entity": "Numpy_array_mathematics"}.
+    intent: ask_Numpy_array_mathematics
+  - action: utter_ask_Numpy_array_mathematics
+  - action: utter_more_code
+
+- story: ask array manipulation path
+  steps:
+  - user: |
+      Show me the command list on [array manipulation]{"entity": "Numpy_array_manipulation"}.
+    intent: ask_Numpy_array_manipulation
+  - action: utter_ask_Numpy_array_manipulation
+  - action: utter_more_code
+
+# - story: ask handling text path
+#   steps:
+#   - user: |
+#       [handling text]{"entity": "NLTK_handling_text"}
+#     intent: ask_NLTK_handling_text
+#   - action: utter_ask_NLTK_handling_text
+#   - action: utter_does_it_help
+#   - user: |
+#       of course
+#     intent: affirm
+#   - action: utter_affirm
+
+# - story: ask handling text sad path 1
+#   steps:
+#   - user: |
+#       I want to see the code for ['handling text']{"entity": "NLTK_handling_text"}.
+#     intent: ask_NLTK_handling_text
+#   - action: utter_ask_NLTK_handling_text
+#   - action: utter_does_it_help
+#   - user: |
+#       I don't think so.
+#     intent: deny
+#   - action: utter_deny
+
+# - story: ask handling text sad path 2
+#   steps:
+#   - user: |
+#       What should I type in if I am going to [handle text]{"entity": "NLTK_handling_text"} words?
+#     intent: ask_NLTK_handling_text
+#   - action: utter_ask_NLTK_handling_text
+#   - action: utter_does_it_help
+#   - user: |
+#       nevermind
+#     intent: out_of_scope
+#   - action: utter_out_of_scope
+
+# - story: ask accessing corpora and lexical resources path
+#   steps:
+#   - user: |
+#       illustration for [accessing corpora and lexical resources]{"entity": "NLTK_accessing_corpora_and_lexical_resources"}
+#     intent: ask_NLTK_accessing_corpora_and_lexical_resources
+#   - action: utter_ask_NLTK_accessing_corpora_and_lexical_resources
+#   - action: utter_does_it_help
+#   - user: |
+#       of course
+#     intent: affirm
+#   - action: utter_affirm
+
+# - story: ask accessing corpora and lexical resources sad path 1
+#   steps:
+#   - user: |
+#       example of [accessing corpora and lexical resources]{"entity": "NLTK_accessing_corpora_and_lexical_resources"}
+#     intent: ask_NLTK_accessing_corpora_and_lexical_resources
+#   - action: utter_ask_NLTK_accessing_corpora_and_lexical_resources
+#   - action: utter_does_it_help
+#   - user: |
+#       I don't think so.
+#     intent: deny
+#   - action: utter_deny
+
+# - story: ask accessing corpora and lexical resources sad path 2
+#   steps:
+#   - user: |
+#       task command for [accessing corpora and lexical resources]{"entity": "NLTK_accessing_corpora_and_lexical_resources"}
+#     intent: ask_NLTK_accessing_corpora_and_lexical_resources
+#   - action: utter_ask_NLTK_accessing_corpora_and_lexical_resources
+#   - action: utter_does_it_help
+#   - user: |
+#       nevermind
+#     intent: out_of_scope
+#   - action: utter_out_of_scope
+
+# - story: ask tokenization path
+#   steps:
+#   - user: |
+#       Show me the command list on [tokenization]{"entity": "NLTK_tokenization"}.
+#     intent: ask_NLTK_tokenization
+#   - action: utter_ask_NLTK_tokenization
+#   - action: utter_does_it_help
+#   - user: |
+#       of course
+#     intent: affirm
+#   - action: utter_affirm
+
+# - story: ask tokenization sad path 1
+#   steps:
+#   - user: |
+#       Tell me more about ['tokenization']{"entity": "NLTK_tokenization"}.
+#     intent: ask_NLTK_tokenization
+#   - action: utter_ask_NLTK_tokenization
+#   - action: utter_does_it_help
+#   - user: |
+#       I don't think so.
+#     intent: deny
+#   - action: utter_deny
+
+# - story: ask tokenization sad path 2
+#   steps:
+#   - user: |
+#       How many default useful command for ['tokenization']{"entity": "NLTK_tokenization"} in NLTK?
+#     intent: ask_NLTK_tokenization
+#   - action: utter_ask_NLTK_tokenization
+#   - action: utter_does_it_help
+#   - user: |
+#       nevermind
+#     intent: out_of_scope
+#   - action: utter_out_of_scope
+
+# - story: ask lemmatization and stemming path
+#   steps:
+#   - user: |
+#       an example of [lemmatization and stemming]{"entity": "NLTK_lemmatization_and_stemming"}
+#     intent: ask_NLTK_lemmatization_and_stemming
+#   - action: utter_ask_NLTK_lemmatization_and_stemming
+#   - action: utter_does_it_help
+#   - user: |
+#       of course
+#     intent: affirm
+#   - action: utter_affirm
+
+# - story: ask lemmatization and stemming sad path 1
+#   steps:
+#   - user: |
+#       command lists for [lemmatization and stemming]{"entity": "NLTK_lemmatization_and_stemming"}
+#     intent: ask_NLTK_lemmatization_and_stemming
+#   - action: utter_ask_NLTK_lemmatization_and_stemming
+#   - action: utter_does_it_help
+#   - user: |
+#       I don't think so.
+#     intent: deny
+#   - action: utter_deny
+
+# - story: ask lemmatization and stemming sad path 2
+#   steps:
+#   - user: |
+#       show me how to do [lemmatization and stemming]{"entity": "NLTK_lemmatization_and_stemming"}?
+#     intent: ask_NLTK_lemmatization_and_stemming
+#   - action: utter_ask_NLTK_lemmatization_and_stemming
+#   - action: utter_does_it_help
+#   - user: |
+#       nevermind
+#     intent: out_of_scope
+#   - action: utter_out_of_scope
+
+# - story: ask part of speech tagging path
+#   steps:
+#   - user: |
+#       an example of [lemmatization and stemming]{"entity": "NLTK_lemmatization_and_stemming"}
+#     intent: ask_NLTK_part_of_speech_tagging
+#   - action: utter_ask_NLTK_part_of_speech_tagging
+#   - action: utter_does_it_help
+#   - user: |
+#       of course
+#     intent: affirm
+#   - action: utter_affirm
+
+# - story: ask part of speech tagging sad path 1
+#   steps:
+#   - user: |
+#       command lists for [lemmatization and stemming]{"entity": "NLTK_lemmatization_and_stemming"}
+#     intent: ask_NLTK_part_of_speech_tagging
+#   - action: utter_ask_NLTK_part_of_speech_tagging
+#   - action: utter_does_it_help
+#   - user: |
+#       I don't think so.
+#     intent: deny
+#   - action: utter_deny
+
+# - story: ask part of speech tagging sad path 2
+#   steps:
+#   - user: |
+#       show me how to do [lemmatization and stemming]{"entity": "NLTK_lemmatization_and_stemming"}?
+#     intent: ask_NLTK_part_of_speech_tagging
+#   - action: utter_ask_NLTK_part_of_speech_tagging
+#   - action: utter_does_it_help
+#   - user: |
+#       nevermind
+#     intent: out_of_scope
+#   - action: utter_out_of_scope
+
+# - story: ask sentence parsing path
+#   steps:
+#   - user: |
+#       How many default useful command for ['sentence parsing']{"entity": "NLTK_sentence_parsing"} in NLTK?
+#     intent: ask_NLTK_sentence_parsing
+#   - action: utter_ask_NLTK_sentence_parsing
+#   - action: utter_does_it_help
+#   - user: |
+#       of course
+#     intent: affirm
+#   - action: utter_affirm
+
+# - story: ask sentence parsing sad path 1
+#   steps:
+#   - user: |
+#       [sentence parsing]{"entity": "NLTK_sentence_parsing"}
+#     intent: ask_NLTK_sentence_parsing
+#   - action: utter_ask_NLTK_sentence_parsing
+#   - action: utter_does_it_help
+#   - user: |
+#       I don't think so.
+#     intent: deny
+#   - action: utter_deny
+
+# - story: ask sentence parsing sad path 2
+#   steps:
+#   - user: |
+#       What is the command list for ['sentence parsing']{"entity": "NLTK_sentence_parsing"}?
+#     intent: ask_NLTK_sentence_parsing
+#   - action: utter_ask_NLTK_sentence_parsing
+#   - action: utter_does_it_help
+#   - user: |
+#       nevermind
+#     intent: out_of_scope
+#   - action: utter_out_of_scope
+
+# - story: ask text classification path
+#   steps:
+#   - user: |
+#       show me the example of [text classification]{"entity": "NLTK_text_classification"}
+#     intent: ask_NLTK_text_classification
+#   - action: utter_ask_NLTK_text_classification
+#   - action: utter_does_it_help
+#   - user: |
+#       of course
+#     intent: affirm
+#   - action: utter_affirm
+
+# - story: ask text classification sad path 1
+#   steps:
+#   - user: |
+#       how to do [text classification]{"entity": "NLTK_text_classification"}
+#     intent: ask_NLTK_text_classification
+#   - action: utter_ask_NLTK_text_classification
+#   - action: utter_does_it_help
+#   - user: |
+#       I don't think so.
+#     intent: deny
+#   - action: utter_deny
+
+# - story: ask text classification sad path 2
+#   steps:
+#   - user: |
+#       [text classification]{"entity": "NLTK_text_classification"}
+#     intent: ask_NLTK_text_classification
+#   - action: utter_ask_NLTK_text_classification
+#   - action: utter_does_it_help
+#   - user: |
+#       nevermind
+#     intent: out_of_scope
+#   - action: utter_out_of_scope
+
+# - story: ask entity recognition path
+#   steps:
+#   - user: |
+#       How many default useful command for ['entity recognition']{"entity": "NLTK_entity_recognition"} in NLTK?
+#     intent: ask_NLTK_entity_recognition
+#   - action: utter_ask_NLTK_entity_recognition
+#   - action: utter_does_it_help
+#   - user: |
+#       of course
+#     intent: affirm
+#   - action: utter_affirm
+
+# - story: ask entity recognition sad path 1
+#   steps:
+#   - user: |
+#       Tell me more about ['entity recognition']{"entity": "NLTK_entity_recognition"}.
+#     intent: ask_NLTK_entity_recognition
+#   - action: utter_ask_NLTK_entity_recognition
+#   - action: utter_does_it_help
+#   - user: |
+#       I don't think so.
+#     intent: deny
+#   - action: utter_deny
+
+# - story: ask entity recognition sad path 2
+#   steps:
+#   - user: |
+#       Command line for ['entity recognition']{"entity": "NLTK_entity_recognition"}.
+#     intent: ask_NLTK_entity_recognition
+#   - action: utter_ask_NLTK_entity_recognition
+#   - action: utter_does_it_help
+#   - user: |
+#       nevermind
+#     intent: out_of_scope
+#   - action: utter_out_of_scope
+
+# - story: ask creating arrays path
+#   steps:
+#   - user: |
+#       How many default useful command for ['creating arrays']{"entity": "Numpy_creating_arrays"} in Numpy?
+#     intent: ask_Numpy_creating_arrays
+#   - action: utter_ask_Numpy_creating_arrays
+#   - action: utter_does_it_help
+#   - user: |
+#       of course
+#     intent: affirm
+#   - action: utter_affirm
+
+# - story: ask creating arrays sad path 1
+#   steps:
+#   - user: |
+#       I need to know [creating arrays]{"entity": "Numpy_creating_arrays"}
+#     intent: ask_Numpy_creating_arrays
+#   - action: utter_ask_Numpy_creating_arrays
+#   - action: utter_does_it_help
+#   - user: |
+#       I don't think so.
+#     intent: deny
+#   - action: utter_deny
+
+# - story: ask creating arrays sad path 2
+#   steps:
+#   - user: |
+#       how to [create arrays]{"entity": "Numpy_creating_arrays"}
+#     intent: ask_Numpy_creating_arrays
+#   - action: utter_ask_Numpy_creating_arrays
+#   - action: utter_does_it_help
+#   - user: |
+#       nevermind
+#     intent: out_of_scope
+#   - action: utter_out_of_scope
+
+# - story: ask inspecting your array path
+#   steps:
+#   - user: |
+#       illustrate [inspecting your array]{"entity": "Numpy_inspecting_your_array"}
+#     intent: ask_Numpy_inspecting_your_array
+#   - action: utter_ask_Numpy_inspecting_your_array
+#   - action: utter_does_it_help
+#   - user: |
+#       of course
+#     intent: affirm
+#   - action: utter_affirm
+
+# - story: ask inspecting your array sad path 1
+#   steps:
+#   - user: |
+#       example for [inspecting your array]{"entity": "Numpy_inspecting_your_array"}
+#     intent: ask_Numpy_inspecting_your_array
+#   - action: utter_ask_Numpy_inspecting_your_array
+#   - action: utter_does_it_help
+#   - user: |
+#       I don't think so.
+#     intent: deny
+#   - action: utter_deny
+
+# - story: ask inspecting your array sad path 2
+#   steps:
+#   - user: |
+#       show me [inspecting your array]{"entity": "Numpy_inspecting_your_array"}
+#     intent: ask_Numpy_inspecting_your_array
+#   - action: utter_ask_Numpy_inspecting_your_array
+#   - action: utter_does_it_help
+#   - user: |
+#       nevermind
+#     intent: out_of_scope
+#   - action: utter_out_of_scope
+
+# - story: ask array mathematics path
+#   steps:
+#   - user: |
+#       Tell me more about ['array mathematics']{"entity": "Numpy_array_mathematics"}.
+#     intent: ask_Numpy_arrary_mathematics
+#   - action: utter_ask_Numpy_arrary_mathematics
+#   - action: utter_does_it_help
+#   - user: |
+#       of course
+#     intent: affirm
+#   - action: utter_affirm
+
+# - story: ask array mathematics sad path 1
+#   steps:
+#   - user: |
+#       what do I do when do [array mathematics]{"entity": "Numpy_array_mathematics"}.
+#     intent: ask_Numpy_arrary_mathematics
+#   - action: utter_ask_Numpy_arrary_mathematics
+#   - action: utter_does_it_help
+#   - user: |
+#       I don't think so.
+#     intent: deny
+#   - action: utter_deny
+
+# - story: ask array mathematics sad path 2
+#   steps:
+#   - user: |
+#       [array mathematics]{"entity": "Numpy_array_mathematics"}
+#     intent: ask_Numpy_arrary_mathematics
+#   - action: utter_ask_Numpy_arrary_mathematics
+#   - action: utter_does_it_help
+#   - user: |
+#       nevermind
+#     intent: out_of_scope
+#   - action: utter_out_of_scope
+
+# - story: ask array manipulation path
+#   steps:
+#   - user: |
+#       an example of [array manipulation]{"entity": "Numpy_array_manipulation"}
+#     intent: ask_Numpy_arrary_manipulation
+#   - action: utter_ask_Numpy_arrary_manipulation
+#   - action: utter_does_it_help
+#   - user: |
+#       of course
+#     intent: affirm
+#   - action: utter_affirm
+
+# - story: ask array manipulation sad path 1
+#   steps:
+#   - user: |
+#       how to do [array manipulation]{"entity": "Numpy_array_manipulation"}
+#     intent: ask_Numpy_arrary_manipulation
+#   - action: utter_ask_Numpy_arrary_manipulation
+#   - action: utter_does_it_help
+#   - user: |
+#       I don't think so.
+#     intent: deny
+#   - action: utter_deny
+
+# - story: ask array manipulation sad path 2
+#   steps:
+#   - user: |
+#       show me an example of [array manipulation]{"entity": "Numpy_array_manipulation"}
+#     intent: ask_Numpy_arrary_manipulation
+#   - action: utter_ask_Numpy_arrary_manipulation
+#   - action: utter_does_it_help
+#   - user: |
+#       nevermind
+#     intent: out_of_scope
+#   - action: utter_out_of_scope

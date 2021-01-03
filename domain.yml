@@ -1,0 +1,283 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+
+  - ask_Jupyter
+  - ask_new_notebook
+  - ask_open
+  - ask_make_a_copy
+  - ask_save_as
+  - ask_rename
+  - ask_save_and_checkpoint
+  - ask_revert_to_checkpoint
+  - ask_print_preview
+  - ask_download_as
+  - ask_close_and_halt
+  - ask_cut_cells
+  - ask_copy_cells
+  - ask_paste_cells_above
+  - ask_paste_cells_below
+  - ask_paste_cells_and_replace
+  - ask_delete_cells
+  - ask_undo_delete_cells
+  - ask_split_cell
+  - ask_merge_cell_above
+  - ask_merge_cell_below
+  - ask_move_cell_up
+  - ask_move_cell_down
+  - ask_edit_notebook_metadata
+  - ask_find_and_replace
+  - ask_cut_cell_attachment
+  - ask_copy_cell_attachment
+  - ask_paste_cell_attachment
+  - ask_insert_image
+
+  - ask_NLTK
+  - ask_NLTK_handling_text
+  - ask_NLTK_accessing_corpora_and_lexical_resources
+  - ask_NLTK_tokenization
+  - ask_NLTK_lemmatization_and_stemming
+  - ask_NLTK_part_of_speech_tagging
+  - ask_NLTK_sentence_parsing
+  - ask_NLTK_text_classification
+  - ask_NLTK_entity_recognition
+
+  - ask_Numpy
+  - ask_Numpy_creating_arrays
+  - ask_Numpy_inspecting_your_array
+  - ask_Numpy_array_mathematics
+  - ask_Numpy_array_manipulation
+
+  - out_of_scope
+
+entities:
+  - Jupyter
+  - NLTK
+  - Numpy
+
+  - new notebook
+  - open
+  - make a copy
+  - save as
+  - rename
+  - save and checkpoint
+  - revert to checkpoint
+  - print preview
+  - download as
+  - close_and_halt
+  - cut_cells
+  - copy_cells
+  - paste_cells_above
+  - paste_cells_below
+  - paste_cells_and_replace
+  - delete_cells
+  - undo_delete_cells
+  - split_cell
+  - merge_cell_above
+  - merge_cell_below
+  - move_cell_up
+  - move_cell_down
+  - edit_notebook_metadata
+  - find_and_replace
+  - cut_cell_attachment
+  - copy_cell_attachment
+  - paste_cell_attachment
+  - insert_image
+
+  - NLTK_handling_text
+  - NLTK_accessing_corpora_and_lexical_resources
+  - NLTK_tokenization
+  - NLTK_lemmatization_and_stemming
+  - NLTK_part_of_speech_tagging
+  - NLTK_sentence_parsing
+  - NLTK_text_classification
+  - NLTK_entity_recognition
+
+  - Numpy_creating_arrays
+  - Numpy_inspecting_your_array
+  - Numpy_array_mathematics
+  - Numpy_array_manipulation
+
+responses:
+  utter_greet:
+  - text: "Hey! I'm glad to talk to you."
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_does_it_help:
+  - text: "Does it help you?"
+
+  utter_affirm:
+  - text: "Great"
+
+  utter_deny:
+  - text: "Please specify the name of the python module, then follow the instructions when entering the keywords or commands. If the explanation is too simple to interpret its meaning, please search Python in Data Science cheat sheet on the internet. Try again!"
+
+  utter_out_of_scope:
+  - text: "Sorry I don't understand what you mean. Please specify the name of the python module first, then follow the instructions when entering the keywords or commands."
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_bot_info:
+  - text: "what python module would you like to learn? You can choose from Jupyter notebook, NLTK and Numpy by typing the name of these modules."
+
+  utter_more_code:
+  - text: "If you'd like to see more command line examples used in different NLTK module, please follow the previous instructions to enter the keywords of each NLP task."
+
+  utter_Jupyter_info:
+  - text: "Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text. "
+
+  utter_ask_Jupyter:
+  - text: "Please enter the command button name to learn more about Jupyter notebook."
+
+  utter_ask_new_notebook:
+  - text: "The function of new notebook is to create a new notebook."
+
+  utter_ask_open:
+  - text: "The function of open is to open an existing notebook."
+
+  utter_ask_make_a_copy:
+  - text: "Make a copy of the current notebook."
+
+  utter_ask_save_as:
+  - text: "Save current notebook."
+
+  utter_ask_rename:
+  - text: "rename current notebook."
+
+  utter_ask_save_and_checkpoint:
+  - text: "save current notebook & record checkpoint."
+
+  utter_ask_revert_to_checkpoint:
+  - text: "revert notebook to a previous checkpoint."
+
+  utter_ask_print_preview:
+  - text: "preview the printed notebook."
+
+  utter_ask_download_as:
+  - text: "download notebook as IPython notebook, Python HTML markdown PDF."
+
+  utter_ask_close_and_halt:
+  - text: "close notebook & stop running scripts."
+
+  utter_ask_cut_cells:
+  - text: "cut the selected cells to clipboard."
+
+  utter_ask_copy_cells:
+  - text: "copy cells from clipboard to current position."
+
+  utter_ask_paste_cells_above:
+  - text: "paste cells above current cells."
+
+  utter_ask_paste_cells_below:
+  - text: "paste cells below current cells."
+
+  utter_ask_paste_cell_and_replace:
+  - text: "paste cells on top of current cells."
+
+  utter_ask_delete_cells:
+  - text: "delete cells."
+
+  utter_ask_undo_delete_cells:
+  - text: "revert 'delete cells' invocation."
+
+  utter_ask_split_cell:
+  - text: "split up cell from current position."
+
+  utter_ask_merge_cell_above:
+  - text: "merge current cell with above."
+
+  utter_ask_merge_cell_below:
+  - text: "merge current cell with below."
+
+  utter_ask_move_cell_up:
+  - text: "move current cell up."
+
+  utter_ask_move_cell_down:
+  - text: "move current cell with down."
+
+  utter_ask_edit_notebook_metadata:
+  - text: "adjusting metadata underlying the current notebook."
+
+  utter_ask_find_and_replace:
+  - text: "find and replace in selected cells."
+
+  utter_ask_cut_cell_attachment:
+  - text: "remove cell attachments."
+
+  utter_ask_copy_cell_attachment:
+  - text: "copy attachments of current cell."
+
+  utter_ask_paste_cell_attachment:
+  - text: "paste attachments to current cell."
+
+  utter_ask_insert_image:
+  - text: "insert image in selected cells."
+
+  utter_NLTK_info:
+  - text: "NLTK is a suite of libraries and programs for symbolic and statistical natural language processing for English written in the Python programming language."
+
+  utter_ask_NLTK:
+  - text: "Please choose from 'handling text', 'accessing corpora and lexical resources', 'tokenization', 'lemmatization & stemming', 'part of speech tagging', 'sentence parsing', 'text classification' and 'entity recognition' to learn more about NLTK."
+
+  utter_ask_NLTK_handling_text:
+  - text: "You can use these command in the following examples. list(text) means split text into character tokens. set(text) means unique tokens. len(text) returns the number of characters."
+
+  utter_ask_NLTK_accessing_corpora_and_lexical_resources:
+  - text: "you can use 'from nltk.corpus import brown' to import corpus reader project. brown.words(text_id) then will returns pretokenized document as lists of words. brown.fieldids() lists docs in Brown corpus. brown.categories() lists categories in Brown categories."
+
+  utter_ask_NLTK_tokenization:
+  - text: "If you are going to tokenize a piece of text, text.split('') can split a text by space. nltk.word_tokenizer(text) is the nltk built-in tokenizer used to tokenize the text by words. nltl.sent_tokenize(doc) is the nltk built-in tokenizer used to tokenize the text by sentences."
+
+  utter_ask_NLTK_lemmatization_and_stemming:
+  - text: "The following example will give you a brief description of how to lemmatize and stem words in NLP. First you need to assign a string of text to input, like input = 'List listed lists listing listings'. word = input.lower().split('') will normalize lowercase words. porter = nltk.PorterStemmer will initialise stemmer. [porter.stem(t) for t in words] create list of stems. WNL = nltk.WordNetLemmatizer() will initialise wordnet lemmatizer. Finally, [WNL.lemmatize(t) for t in words] use the lemmatizer to lemmatize the string of text."
+
+  utter_ask_NLTK_part_of_speech_tagging:
+  - text: "You can look up definition for a POS tag by nltk.help.upenn_tagset('MD'). nltk.pos_tag(words) is nltk in-built pos tagger."
+
+  utter_ask_NLTK_sentence_parsing:
+  - text: "g = nltk.data.load('grammar.cfg') means to load a grammer from a file. g = nltk.fromstring('''...''') will manually define grammer. parser = nltk.ChartParser(g) create a parser out of the grammer."
+
+  utter_ask_NLTK_text_classification:
+  - text: "First you need to import modules, from sklearn.feature_extraction.text import CountVectorizer, TfidVectorizer. vec = CountVectorizer().fit(X_train) fit bag of words to data. vect.get_feature_names() get features. vect.transform(X_train) will convert to doc-term matrix."
+
+  utter_ask_NLTK_entity_recognition:
+  - text: "The regex chunk grammar is g = 'NP: {<DT>?<JJ>*<NN>}'. cp = nltk.RegexParser(g) is used to parse grammar. ch = cp.parse(pos_sent) parse tagged sent. using grammar. print(ch) is used to show chunks. ch.draw() show chunks in IOB tree. cp.evaluate(test_sents) evaluate against test doc. "
+
+  utter_Numpy_info:
+  - text: "The NumPy library is the core library for scientific computing in Python. It provides a high-performance multidimensional array object, and tools for working with these arrays."
+
+  utter_ask_Numpy:
+  - text: "Please choose from 'creating arrays', 'inspecting your array', 'array mathematics' and 'array manipulation' to learn more about Numpy."
+
+  utter_ask_Numpy_creating_arrays:
+  - text: "You can use the command as the example illustrates. d = np.arange(10, 25, 5) create an array of evenly spaced values. np.random.random((2,2)) create an array with random values. np.empty((3,2)) create an empty array."
+
+  utter_ask_Numpy_inspecting_your_array:
+  - text: "a.shape shows array dimensions. len(a) shows length of array. b.ndim shows number of array dimensions. e.size shows number of array elements. b.type shows data type of array elements."
+
+  utter_ask_Numpy_array_mathematics:
+  - text: "np.multiply(a,b), np.exp(b), np.sqrt(b) returns multiplication, expotentiation and square root respectively."
+
+  utter_ask_Numpy_array_manipulation:
+  - text: "i.T permutate array dimensions. g.reshape(3,-2) reshape the array but don't change the data. np.append(h,g) append items to an array. np.concatenate((a,d), axis=0) concatenate arrays. np.hsplit(a,3) split the array horizontally at the 3rd index."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

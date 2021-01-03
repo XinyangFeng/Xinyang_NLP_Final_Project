@@ -1,0 +1,239 @@
+[
+  {
+    "text": "Explain revert to checkpoint to me.",
+    "entities": [
+      {
+        "start": 8,
+        "end": 28,
+        "value": "revert to checkpoint",
+        "entity": "revert to checkpoint"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "revert to checkpoint",
+        "start": 8,
+        "end": 31,
+        "confidence_entity": 0.6925156116485596,
+        "value": "revert to checkpoint to",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "cut cell attachment",
+    "entities": [
+      {
+        "start": 0,
+        "end": 19,
+        "value": "cut cell attachment",
+        "entity": "cut_cell_attachment"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "copy_cell_attachment",
+        "start": 0,
+        "end": 19,
+        "confidence_entity": 0.5650763511657715,
+        "value": "cut cell attachment",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "What should I type in if I am going to accessing corpora and lexical resources words?",
+    "entities": [
+      {
+        "start": 39,
+        "end": 78,
+        "value": "accessing corpora and lexical resources",
+        "entity": "NLTK_accessing_corpora_and_lexical_resources"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "never",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "revert to checkpoint",
+        "start": 0,
+        "end": 5,
+        "confidence_entity": 0.8586620688438416,
+        "value": "never",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "nevermind.",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "revert to checkpoint",
+        "start": 0,
+        "end": 9,
+        "confidence_entity": 0.47207221388816833,
+        "value": "nevermind",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "what do I do when tokenizing words.",
+    "entities": [
+      {
+        "start": 18,
+        "end": 34,
+        "value": "tokenizing words",
+        "entity": "NLTK_tokenization"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "NLTK_tokenization",
+        "start": 18,
+        "end": 28,
+        "confidence_entity": 0.9853402972221375,
+        "value": "tokenizing",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "my day was horrible",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "Numpy_inspecting_your_array",
+        "start": 0,
+        "end": 2,
+        "confidence_entity": 0.6411970853805542,
+        "value": "my",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I am disappointed",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "save and checkpoint",
+        "start": 5,
+        "end": 17,
+        "confidence_entity": 0.4410392642021179,
+        "value": "disappointed",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I want to order a pizza.",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "make a copy",
+        "start": 16,
+        "end": 23,
+        "confidence_entity": 0.20753377676010132,
+        "value": "a pizza",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "none of your business.",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "Numpy_inspecting_your_array",
+        "start": 8,
+        "end": 12,
+        "confidence_entity": 0.9973226189613342,
+        "value": "your",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I am going to save the world",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "save and checkpoint",
+        "start": 14,
+        "end": 18,
+        "confidence_entity": 0.5419319868087769,
+        "value": "save",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "what do I do when lemmatize and stem words.",
+    "entities": [
+      {
+        "start": 18,
+        "end": 42,
+        "value": "lemmatize and stem words",
+        "entity": "NLTK_lemmatization_and_stemming"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "NLTK_lemmatization_and_stemming",
+        "start": 18,
+        "end": 36,
+        "confidence_entity": 0.8760340809822083,
+        "value": "lemmatize and stem",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "I changed my mind.",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "Numpy_inspecting_your_array",
+        "start": 10,
+        "end": 12,
+        "confidence_entity": 0.7468773126602173,
+        "value": "my",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "What should I type in if I am going to part of speech tagging words?",
+    "entities": [
+      {
+        "start": 39,
+        "end": 61,
+        "value": "part of speech tagging",
+        "entity": "NLTK_part_of_speech_tagging"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "revert to checkpoint",
+        "start": 36,
+        "end": 38,
+        "confidence_entity": 0.6954900622367859,
+        "value": "to",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "NLTK_part_of_speech_tagging",
+        "start": 39,
+        "end": 61,
+        "confidence_entity": 0.9927335977554321,
+        "value": "part of speech tagging",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]
